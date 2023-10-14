@@ -2,6 +2,7 @@
   --visual-display__size: min(2.4rem, 100%);
   position: relative;
   width: var(--visual-display__size);
+  max-width: 100%;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
   aspect-ratio: 1/1;
 }
@@ -19,9 +20,6 @@
 
 .visual-display--style-thumbnail {
   --visual-display__size: min(9rem, 100%);
-
-  border-radius: var(--buttons-radius);
-  overflow: hidden;
 }
 
 .visual-display-parent .visual-display--style-swatch,
@@ -34,7 +32,7 @@
 }
 
 /* Hover, active, and focus states */
-:where(
+:is(
     .visual-display-parent:hover .visual-display--style-swatch,
     .visual-display-parent.active .visual-display--style-swatch,
     .visual-display-parent:has(:focus-visible) .visual-display--style-swatch,
@@ -42,7 +40,8 @@
     .visual-display-parent--thumbnail.active,
     .visual-display-parent--thumbnail:has(:focus-visible)
   ) {
-  outline: 0 solid rgb(var(--color-foreground));
+  outline-style: solid;
+  outline-color: rgb(var(--color-foreground));
 }
 
 /* Active state */

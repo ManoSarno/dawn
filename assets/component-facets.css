@@ -306,6 +306,19 @@
   align-items: flex-start;
 }
 
+.facets-layout-grid .visual-display-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 0;
+  height: 100%;
+  font-size: 1.3rem;
+}
+
+.facets-layout-grid .visual-display-parent--thumbnail {
+  padding-bottom: 0.8rem;
+}
+
 .facets-layout-grid .visual-display--style-thumbnail {
   --visual-display__size: 100%;
 }
@@ -325,7 +338,7 @@
 }
 
 /* Hover, active, and focus states */
-:where(.facets__label:hover, .facets__label.active, .facets__label:has(:focus-visible)) {
+:is(.facets__label:hover, .facets__label.active, .facets__label:has(:focus-visible)) {
   color: rgba(var(--color-foreground), 1);
 }
 
@@ -396,12 +409,6 @@
   .facet-checkbox > input[type='checkbox']:checked ~ .icon-checkmark {
     border: none;
   }
-}
-
-.visual-display-parent.facets__label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
 }
 
 .facet-checkbox--disabled,
@@ -979,11 +986,6 @@ input.mobile-facets__checkbox {
   margin-right: 0.5rem;
   padding-left: 0.5rem;
   padding-right: 1.5rem;
-}
-
-.visual-display-parent {
-  padding: 0;
-  height: 100%;
 }
 
 .product-count {
