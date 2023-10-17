@@ -63,7 +63,7 @@
   outline-width: 0.2rem;
   outline-color: rgb(var(--color-foreground), 0.4);
   box-shadow: 0 0 0 0.6rem rgb(var(--color-background)), 0 0 0 0.8rem rgba(var(--color-foreground), 0.5),
-    0 0 0.3rem 0.1rem rgba(var(--color-foreground));
+    0 0 1.2rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 /* Focus state for older browsers */
@@ -73,7 +73,7 @@
     outline-offset: 0.2rem;
     outline: 0.2rem solid rgb(var(--color-foreground), 0.4);
     box-shadow: 0 0 0 0.6rem rgb(var(--color-background)), 0 0 0 0.8rem rgba(var(--color-foreground), 0.5),
-      0 0 0.3rem 0.1rem rgba(var(--color-foreground));
+      0 0 1.2rem 0.4rem rgba(var(--color-foreground), 0.3);
   }
 }
 
@@ -89,7 +89,7 @@
 
   /* 1.414 is not a magic number, it's the square root of 2, or the length of the diagonal */
   width: calc(var(--visual-display__size) * 1.414);
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.4);
+  border-bottom: 0.1rem solid #aeaeae;
   transform: rotate(-45deg);
   transform-origin: left;
 }
