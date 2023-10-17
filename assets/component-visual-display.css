@@ -28,7 +28,7 @@
 }
 
 .visual-display-parent--thumbnail {
-  outline: 0.1rem solid rgba(var(--color-foreground), 0.4);
+  outline: 0.1rem solid rgba(var(--color-foreground), 0.2);
 }
 
 /* Hover, active, and focus states */
@@ -41,27 +41,29 @@
     .visual-display-parent--thumbnail:has(:focus-visible)
   ) {
   outline-style: solid;
-  outline-color: rgb(var(--color-foreground));
 }
 
 /* Active state */
 .visual-display-parent.active .visual-display--style-swatch,
 .visual-display-parent--thumbnail.active {
   outline-width: 0.1rem;
+  outline-color: rgb(var(--color-foreground), 1);
 }
 
 /* Hover state */
 .visual-display-parent:hover .visual-display--style-swatch,
 .visual-display-parent--thumbnail:hover {
-  outline-width: 0.15rem;
+  outline-width: 0.2rem;
+  outline-color: rgb(var(--color-foreground), 0.4);
 }
 
 /* Focus state */
 .visual-display-parent:has(:focus-visible) .visual-display--style-swatch,
 .visual-display-parent--thumbnail:has(:focus-visible) {
-  outline-width: 0.15rem;
-  box-shadow: 0 0 0 0.55rem rgb(var(--color-background)), 0 0 0 0.85rem rgba(var(--color-foreground), 0.5),
-    0 0 1.15rem 0.1rem rgba(var(--color-foreground));
+  outline-width: 0.2rem;
+  outline-color: rgb(var(--color-foreground), 0.4);
+  box-shadow: 0 0 0 0.6rem rgb(var(--color-background)), 0 0 0 0.8rem rgba(var(--color-foreground), 0.5),
+    0 0 0.3rem 0.1rem rgba(var(--color-foreground));
 }
 
 /* Focus state for older browsers */
@@ -69,9 +71,9 @@
   .visual-display-parent:focus-within .visual-display--style-swatch,
   .visual-display-parent--thumbnail:focus-within {
     outline-offset: 0.2rem;
-    outline: 0.15rem solid rgb(var(--color-foreground));
-    box-shadow: 0 0 0 0.55rem rgb(var(--color-background)), 0 0 0 0.85rem rgba(var(--color-foreground), 0.5),
-      0 0 1.15rem 0.1rem rgba(var(--color-foreground));
+    outline: 0.2rem solid rgb(var(--color-foreground), 0.4);
+    box-shadow: 0 0 0 0.6rem rgb(var(--color-background)), 0 0 0 0.8rem rgba(var(--color-foreground), 0.5),
+      0 0 0.3rem 0.1rem rgba(var(--color-foreground));
   }
 }
 
