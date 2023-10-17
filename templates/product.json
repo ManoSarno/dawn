@@ -3,25 +3,52 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
-          "type": "title"
-        },
-        "caption": {
-          "type": "text",
+          "type": "title",
           "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
           }
         },
-        "price": {
-          "type": "price"
+        "10f145c6-bcdf-467b-a149-c15925b6ce10": {
+          "type": "rating",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "125bb91e-f85a-451c-9fab-40b8cc70c8e7": {
+          "type": "multicolumn",
+          "settings": {
+            "icon": "check_mark",
+            "custom_icon": "shopify:\/\/shop_images\/multicolumn-1.svg",
+            "content": "<p>15g de Proteínas<\/p>"
+          }
+        },
+        "3b61e4fb-15e7-4e8f-8e79-5bdbe47efd98": {
+          "type": "multicolumn",
+          "settings": {
+            "icon": "check_mark",
+            "custom_icon": "shopify:\/\/shop_images\/multicolumn-2.svg",
+            "content": "<p>Low Carb<\/p>"
+          }
+        },
+        "761c9f96-48fb-4f3b-90ee-76c7b1059330": {
+          "type": "multicolumn",
+          "settings": {
+            "icon": "check_mark",
+            "custom_icon": "shopify:\/\/shop_images\/multicolumn-3.svg",
+            "content": "<p>Sem Glúten<\/p>"
+          }
+        },
+        "47823781-c731-4b0f-bc0c-98885bb86f5c": {
+          "type": "multicolumn",
+          "settings": {
+            "icon": "check_mark",
+            "custom_icon": "shopify:\/\/shop_images\/multicolumn-4.svg",
+            "content": "<p>Sem Lactose<\/p>"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -29,188 +56,1098 @@
             "picker_type": "button"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector"
+        "price": {
+          "type": "price",
+          "settings": {
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
-        "description": {
-          "type": "description"
-        },
-        "collapsible-row-0": {
-          "type": "collapsible_tab",
+        "df9eebac-76d2-415d-8e81-3cfb6229aaea": {
+          "type": "verified",
           "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "truck",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Dimensions",
-            "icon": "ruler",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Care Instructions",
-            "icon": "heart",
-            "content": "",
-            "page": ""
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
+            "icon": "shopify:\/\/shop_images\/icon-security.svg",
+            "text": "<p>Compra 100% segura<\/p>"
           }
         }
       },
       "block_order": [
-        "vendor",
         "title",
-        "caption",
-        "price",
-        "variant_picker",
-        "quantity_selector",
-        "buy_buttons",
+        "10f145c6-bcdf-467b-a149-c15925b6ce10",
         "description",
-        "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2",
-        "collapsible-row-3",
-        "share"
+        "125bb91e-f85a-451c-9fab-40b8cc70c8e7",
+        "3b61e4fb-15e7-4e8f-8e79-5bdbe47efd98",
+        "761c9f96-48fb-4f3b-90ee-76c7b1059330",
+        "47823781-c731-4b0f-bc0c-98885bb86f5c",
+        "variant_picker",
+        "price",
+        "buy_buttons",
+        "df9eebac-76d2-415d-8e81-3cfb6229aaea"
+      ],
+      "custom_css": [
+
       ],
       "settings": {
         "enable_sticky_info": true,
-        "gallery_layout": "stacked",
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "padding_top": 64,
+        "padding_bottom": 80
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
+    "faixa-passante": {
+      "type": "faixa-passante-by-turbo",
       "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
+        "94e7cfd8-f48b-43c5-b89e-10b0183a6be6": {
+          "type": "image",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "image": "shopify:\/\/shop_images\/passante-1.jpg",
+            "full_height": true
           }
         },
-        "image-with-text-1": {
+        "4a6f417d-d65a-453b-985e-ffbf537351a1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-2.jpg",
+            "full_height": true
+          }
+        },
+        "c83fdf62-e04f-4d43-adac-f9733b0367a6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-3.jpg",
+            "full_height": true
+          }
+        },
+        "a2cd39c2-52e1-4bfe-adae-609e5698c7ca": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-4.jpg",
+            "full_height": true
+          }
+        },
+        "c422f5ee-fe45-4475-817f-f2c1a7863ba7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-5.jpg",
+            "full_height": true
+          }
+        },
+        "3370bb76-06ad-4ebf-a827-c389ff296dc9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-6.jpg",
+            "full_height": true
+          }
+        },
+        "2f32d119-681c-49db-b575-dbca5ed0c758": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-7.jpg",
+            "full_height": true
+          }
+        },
+        "20f8f8e2-e516-4bbb-b2ea-202224306655": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-8.jpg",
+            "full_height": true
+          }
+        },
+        "aef271db-dd90-4fd6-a0f8-29d21315deea": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-9.jpg",
+            "full_height": true
+          }
+        }
+      },
+      "block_order": [
+        "94e7cfd8-f48b-43c5-b89e-10b0183a6be6",
+        "4a6f417d-d65a-453b-985e-ffbf537351a1",
+        "c83fdf62-e04f-4d43-adac-f9733b0367a6",
+        "a2cd39c2-52e1-4bfe-adae-609e5698c7ca",
+        "c422f5ee-fe45-4475-817f-f2c1a7863ba7",
+        "3370bb76-06ad-4ebf-a827-c389ff296dc9",
+        "2f32d119-681c-49db-b575-dbca5ed0c758",
+        "20f8f8e2-e516-4bbb-b2ea-202224306655",
+        "aef271db-dd90-4fd6-a0f8-29d21315deea"
+      ],
+      "settings": {
+        "height": 110,
+        "padding": 0,
+        "marquee-color": "#fefefe",
+        "margin": 16,
+        "text-size": 16
+      }
+    },
+    "2c18275d-f92b-4e80-8722-fdd92ef8e9a1": {
+      "type": "modo-de-preparo",
+      "blocks": {
+        "2adf1ac8-1db4-44c7-9338-d38d5ce4a715": {
+          "type": "aba",
+          "settings": {
+            "aba": "1",
+            "image": "shopify:\/\/shop_images\/Rectangle_1948.png",
+            "title": "<h4>Passo 1<\/h4>",
+            "text": "<p>Adicione 1 scoop do Bready e 1 ovo em um recipiente fundo<\/p>"
+          }
+        },
+        "13f42c2b-e186-45e3-bb55-8e27d250a069": {
+          "type": "aba",
+          "settings": {
+            "aba": "1",
+            "image": "shopify:\/\/shop_images\/1_51e68b57-669e-4361-9d7f-68e03800324b.jpg",
+            "title": "<h4>Passo 2<\/h4>",
+            "text": "<p>Misture os dois até ficarem homogêneos<\/p>"
+          }
+        },
+        "cd547871-04e7-4a22-8649-0a4b0d995436": {
+          "type": "aba",
+          "settings": {
+            "aba": "1",
+            "image": "shopify:\/\/shop_images\/2_c8118d77-f398-4500-98a5-6a8769f36253.jpg",
+            "title": "<h4>Passo 3<\/h4>",
+            "text": "<p>Tempere a gosto<\/p>"
+          }
+        },
+        "d5bf3cb4-a12f-41ba-bab7-7bf86244472b": {
+          "type": "aba",
+          "settings": {
+            "aba": "1",
+            "image": "shopify:\/\/shop_images\/Design_sem_nome_1.gif",
+            "title": "<h4>Passo 4<\/h4>",
+            "text": "<p>Leve ao microondas por 90 segundos e veja a mágica!<\/p>"
+          }
+        },
+        "acb552cc-6543-47f5-b35c-e9906d17a5e2": {
+          "type": "aba",
+          "settings": {
+            "aba": "2",
+            "image": "shopify:\/\/shop_images\/Rectangle_1948.png",
+            "title": "<h4>Passo 1<\/h4>",
+            "text": "<p>Adicione 1 scoop do Bready e 1 ovo em um recipiente fundo<\/p>"
+          }
+        },
+        "f45c3d31-8d40-4291-9faf-f607595bcc55": {
+          "type": "aba",
+          "settings": {
+            "aba": "2",
+            "image": "shopify:\/\/shop_images\/Rectangle_1949.png",
+            "title": "<h4>Passo 2<\/h4>",
+            "text": "<p>Misture os dois até ficarem homogêneos<\/p>"
+          }
+        },
+        "0c0d4d97-746d-4c98-afdd-980fc02d3116": {
+          "type": "aba",
+          "settings": {
+            "aba": "2",
+            "image": "shopify:\/\/shop_images\/Rectangle_1950.png",
+            "title": "<h4>Passo 3<\/h4>",
+            "text": "<p>Tempere a gosto<\/p>"
+          }
+        },
+        "62cdedf2-dd72-4493-a86d-9cae93f81232": {
+          "type": "aba",
+          "settings": {
+            "aba": "2",
+            "image": "shopify:\/\/shop_images\/Copia_de_Sem_nome.gif",
+            "title": "<h4>Passo 4<\/h4>",
+            "text": "<p>Unte uma frigideira pequena e despeje a mistura<\/p>"
+          }
+        },
+        "0f42620d-2690-4bbb-b3f7-78e10acba463": {
+          "type": "aba",
+          "settings": {
+            "aba": "2",
+            "image": "shopify:\/\/shop_images\/frigideira_3.jpg",
+            "title": "<h4>Passo 5<\/h4>",
+            "text": "<p>Leve ao fogo baixo com a frigideira tampada<\/p>"
+          }
+        },
+        "2359b91e-4361-40d3-b64a-db352a0e86a3": {
+          "type": "aba",
+          "settings": {
+            "aba": "2",
+            "image": "shopify:\/\/shop_images\/frigiedeira_2.jpg",
+            "title": "<h4>Passo 6<\/h4>",
+            "text": "<p>Espere por 1 minuto e meio para virar o pão<\/p>"
+          }
+        },
+        "d802f662-75de-4cfe-ba75-809ba108f09d": {
+          "type": "aba",
+          "settings": {
+            "aba": "2",
+            "image": "shopify:\/\/shop_images\/frigideira_1.jpg",
+            "title": "<h4>Passo 7<\/h4>",
+            "text": "<p>Passados 3 minutos (ao todo), veja a mágica!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "2adf1ac8-1db4-44c7-9338-d38d5ce4a715",
+        "13f42c2b-e186-45e3-bb55-8e27d250a069",
+        "cd547871-04e7-4a22-8649-0a4b0d995436",
+        "d5bf3cb4-a12f-41ba-bab7-7bf86244472b",
+        "acb552cc-6543-47f5-b35c-e9906d17a5e2",
+        "f45c3d31-8d40-4291-9faf-f607595bcc55",
+        "0c0d4d97-746d-4c98-afdd-980fc02d3116",
+        "62cdedf2-dd72-4493-a86d-9cae93f81232",
+        "0f42620d-2690-4bbb-b3f7-78e10acba463",
+        "2359b91e-4361-40d3-b64a-db352a0e86a3",
+        "d802f662-75de-4cfe-ba75-809ba108f09d"
+      ],
+      "custom_css": [
+        ".title {margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 24px;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "title": "<h2>Modo de preparo<\/h2><p>Escolha uma das opções:<\/p>",
+        "icon_1": "microwave",
+        "icon_2": "pan",
+        "tab1": "Micro-ondas",
+        "tab2": "Frigideira",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "169720687149b79afc": {
+      "type": "apps",
+      "blocks": {
+        "2196b70a-7559-4ce3-b462-9bdc311431e3": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "2196b70a-7559-4ce3-b462-9bdc311431e3"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "9d40dd3a-b7b0-4e36-b6d7-80a1d1687b2c": {
+      "type": "tabelas-by-turbo",
+      "blocks": {
+        "6ff2de29-1e9a-4d8e-b797-1d594ed9457a": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Valor energético (Kcal)<\/p>",
+            "column1": "<p>259<\/p>",
+            "column2": "<p>90<\/p>",
+            "column3": "<p>4<\/p>"
+          }
+        },
+        "fe9aa46d-6add-46d5-98dc-37bd8028de32": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Carboidratos (g)<\/p>",
+            "column1": "<p>6,9<\/p>",
+            "column2": "<p>3,9<\/p>",
+            "column3": "<p>1<\/p>"
+          }
+        },
+        "dd179cbd-587c-490c-83ae-0c76ee8082bf": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p> Açúcares totais (g)<\/p>",
+            "column1": "<p>0,8<\/p>",
+            "column2": "<p>0,1<\/p>",
+            "column3": ""
+          }
+        },
+        "dcfd827b-8751-4d32-9824-3a6490732768": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>  Açúcares adicionados (g)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": "<p>0<\/p>"
+          }
+        },
+        "94891263-9648-4cd5-9c4c-16632ded6ece": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>   Lactose (g)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": ""
+          }
+        },
+        "ad93fb88-a36a-4dc5-ac25-60793e1a4454": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Galactose (g)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": ""
+          }
+        },
+        "d6c173f1-161e-4915-9457-8a67d45f24d0": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Proteínas (g)<\/p>",
+            "column1": "<p>22<\/p>",
+            "column2": "<p>8,0<\/p>",
+            "column3": "<p>16<\/p>"
+          }
+        },
+        "dbfd5dbd-0063-4569-b395-de01bb60fa2b": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Gorduras totais (g)<\/p>",
+            "column1": "<p>14<\/p>",
+            "column2": "<p>4,7<\/p>",
+            "column3": "<p>7<\/p>"
+          }
+        },
+        "3196c025-606b-4b13-a8e0-71fb8e67d482": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p> Gord. Saturadas (g)<\/p>",
+            "column1": "<p>4,0<\/p>",
+            "column2": "<p>0,8<\/p>",
+            "column3": "<p>4<\/p>"
+          }
+        },
+        "dafe7888-0c6c-48f3-aa77-31c3279f5e70": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p> Gord. Trans (g)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": "<p>0<\/p>"
+          }
+        },
+        "4024f1ea-2263-4d87-8a07-bf409f4cf75b": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p> Gord. monoinsaturadas (g)<\/p>",
+            "column1": "<p>1,7<\/p>",
+            "column2": "<p>1,1<\/p>",
+            "column3": ""
+          }
+        },
+        "0f2d2419-9c0f-4a69-8246-e80c3727e6ad": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p> Gord. poli-insaturadas (g)<\/p>",
+            "column1": "<p>4,5<\/p>",
+            "column2": "<p>3,1<\/p>",
+            "column3": ""
+          }
+        },
+        "82e0a271-b954-4886-9c59-67f02023f5cc": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>  Ômega 3 (mg)<\/p>",
+            "column1": "<p>2449<\/p>",
+            "column2": "<p>1714<\/p>",
+            "column3": "<p>43<\/p>"
+          }
+        },
+        "0daf5bc8-0dd4-4600-883b-4431159214a4": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>   Ácido linolênico (mg)<\/p>",
+            "column1": "<p>2449<\/p>",
+            "column2": "<p>1714<\/p>",
+            "column3": "<p>0<\/p>"
+          }
+        },
+        "d5bae421-5ac5-405d-b53a-a890a9e15383": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>    EPA (mg)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": ""
+          }
+        },
+        "c8e68a71-02b6-46b0-bcf3-48cfb85e0d06": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>    DHA (mg)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": ""
+          }
+        },
+        "364d18cf-cba0-4802-b38c-b6fc340f397c": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>  Colesterol (mg)<\/p>",
+            "column1": "<p>5,3<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": "<p>0<\/p>"
+          }
+        },
+        "05672720-c8d1-4d10-b790-f74a31645f6b": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Fibras Alimentares (mg)<\/p>",
+            "column1": "<p>3,6<\/p>",
+            "column2": "<p>2,6<\/p>",
+            "column3": "<p>10<\/p>"
+          }
+        },
+        "69cd5517-c33c-4630-a5cf-3c0fed6503ed": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Sódio (mg)<\/p>",
+            "column1": "<p>314<\/p>",
+            "column2": "<p>170<\/p>",
+            "column3": "<p>8<\/p>"
+          }
+        },
+        "f23dda03-0d6d-4bc9-a1ab-6e420974b2b4": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Vitamina B1 (mg)<\/p>",
+            "column1": "<p>0,009<\/p>",
+            "column2": "<p>0,006<\/p>",
+            "column3": "<p>5<\/p>"
+          }
+        },
+        "9641ddc5-d290-456c-84bb-3a2b0ffcc03e": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Vitamina B3 (mg)<\/p>",
+            "column1": "<p>1,0<\/p>",
+            "column2": "<p>0,7<\/p>",
+            "column3": "<p>5<\/p>"
+          }
+        },
+        "38849443-3dbd-4f6d-b1a4-344305851563": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Ferro (mg)<\/p>",
+            "column1": "<p>3,2<\/p>",
+            "column2": "<p>2,2<\/p>",
+            "column3": "<p>5<\/p>"
+          }
+        },
+        "2b3befa2-1d55-44bd-b295-cc4406fd60a6": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Manganês (mg)<\/p>",
+            "column1": "<p>0,5<\/p>",
+            "column2": "<p>0,4<\/p>",
+            "column3": "<p>13<\/p>"
+          }
+        },
+        "09445f46-4cf1-43f3-8bcd-98806a0f5e83": {
+          "type": "tabela1",
+          "settings": {
+            "title": "<p>Zinco (mg)<\/p>",
+            "column1": "<p>0,8<\/p>",
+            "column2": "<p>0,6<\/p>",
+            "column3": "<p>5<\/p>"
+          }
+        },
+        "08c14ac7-aa50-46b1-9585-dcb1aa34f828": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Valor energético (Kcal)<\/p>",
+            "column1": "<p>253<\/p>",
+            "column2": "<p>85<\/p>",
+            "column3": "<p>4<\/p>"
+          }
+        },
+        "2604862b-df75-4529-8f5b-736ab2437e76": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Carboidratos (g)<\/p>",
+            "column1": "<p>6,7<\/p>",
+            "column2": "<p>3,8<\/p>",
+            "column3": "<p>1<\/p>"
+          }
+        },
+        "1e2761b8-cecb-4e78-bfef-9d3a5742006c": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Açúcares totais (g)<\/p>",
+            "column1": "<p>0,9<\/p>",
+            "column2": "<p>0,2<\/p>",
+            "column3": ""
+          }
+        },
+        "1e9c09ff-2a0d-4a42-92c6-b82c5d2d6761": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>  Açúcares adicionados (g)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": "<p>0<\/p>"
+          }
+        },
+        "f890a445-9401-4bb3-9dfe-10bc7b93d984": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>   Lactose (g)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": ""
+          }
+        },
+        "9b27d2e6-23b1-4c9b-9c48-8bf3316ddaaa": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>   Galactose (g)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": ""
+          }
+        },
+        "a41487d8-d449-40d1-9aee-1c45480e7d7e": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Proteínas (g)<\/p>",
+            "column1": "<p>22<\/p>",
+            "column2": "<p>8,0<\/p>",
+            "column3": "<p>16<\/p>"
+          }
+        },
+        "2efda194-bb9c-47a1-9150-2df2799153cf": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Gorduras totais (g)<\/p>",
+            "column1": "<p>14<\/p>",
+            "column2": "<p>4,5<\/p>",
+            "column3": "<p>7<\/p>"
+          }
+        },
+        "8fe3668b-ac26-41af-bc14-04440f8a6528": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p> Gord. Saturadas (g)<\/p>",
+            "column1": "<p>4,0<\/p>",
+            "column2": "<p>0,8<\/p>",
+            "column3": "<p>4<\/p>"
+          }
+        },
+        "045fefb6-2b47-462f-9c0d-d0864fd7b28d": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p> Gord. Trans (g)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": "<p>0<\/p>"
+          }
+        },
+        "f154142e-da73-45cc-a5c3-c530a7aa5edb": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p> Gord. monoinsaturadas (g)<\/p>",
+            "column1": "<p>1,5<\/p>",
+            "column2": "<p>1,1<\/p>",
+            "column3": ""
+          }
+        },
+        "f8c53634-664a-4b3e-aa09-1623f2bb9dcd": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p> Gord. poli-insaturadas (g)<\/p>",
+            "column1": "<p>4,5<\/p>",
+            "column2": "<p>3,1<\/p>",
+            "column3": ""
+          }
+        },
+        "99e4e9e6-4b5f-409a-b0a5-ed0ee35fdc12": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>  Ômega 3 (mg)<\/p>",
+            "column1": "<p>2183<\/p>",
+            "column2": "<p>1528<\/p>",
+            "column3": "<p>38<\/p>"
+          }
+        },
+        "9df0968d-dcfe-433f-9a22-57761f29dfae": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>   Ácido linolênico (mg)<\/p>",
+            "column1": "<p>2183<\/p>",
+            "column2": "<p>1714<\/p>",
+            "column3": "<p>0<\/p>"
+          }
+        },
+        "b9812ac3-2c60-4a4e-922d-ce358e1f973d": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>    EPA (mg)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": ""
+          }
+        },
+        "609843d0-34d7-443c-b3e1-6f5ea1831ca7": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>    DHA (mg)<\/p>",
+            "column1": "<p>0<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": ""
+          }
+        },
+        "342aed76-082a-4d6d-97de-acaf52bba673": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>  Colesterol (mg)<\/p>",
+            "column1": "<p>5,3<\/p>",
+            "column2": "<p>0<\/p>",
+            "column3": "<p>0<\/p>"
+          }
+        },
+        "b2d51123-359b-4185-a0ba-a5aeea05dc59": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Fibras Alimentares (mg)<\/p>",
+            "column1": "<p>3,6<\/p>",
+            "column2": "<p>2,6<\/p>",
+            "column3": "<p>10<\/p>"
+          }
+        },
+        "6794d0ab-71cc-41c8-ae66-7b60c0661c59": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Sódio (mg)<\/p>",
+            "column1": "<p>314<\/p>",
+            "column2": "<p>170<\/p>",
+            "column3": "<p>8<\/p>"
+          }
+        },
+        "862c7c9b-2250-47dd-9a3a-5aa3acbe757c": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Vitamina B1 (mg)<\/p>",
+            "column1": "<p>0,009<\/p>",
+            "column2": "<p>0,006<\/p>",
+            "column3": "<p>5<\/p>"
+          }
+        },
+        "cf6d73e0-276d-4bb2-97f7-dd51c684f0df": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Vitamina B3 (mg)<\/p>",
+            "column1": "<p>1,0<\/p>",
+            "column2": "<p>0,7<\/p>",
+            "column3": "<p>5<\/p>"
+          }
+        },
+        "6ae9b53d-89f2-410c-b3ca-70e2b85dbcc3": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Ferro (mg)<\/p>",
+            "column1": "<p>3,2<\/p>",
+            "column2": "<p>2,2<\/p>",
+            "column3": "<p>5<\/p>"
+          }
+        },
+        "8aed8bf4-0c2a-46d0-a028-9b32649f6d0c": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Manganês (mg)<\/p>",
+            "column1": "<p>0,5<\/p>",
+            "column2": "<p>0,4<\/p>",
+            "column3": "<p>13<\/p>"
+          }
+        },
+        "8ea874a6-9e97-4db9-b28e-883b862f34cb": {
+          "type": "tabela2",
+          "settings": {
+            "title": "<p>Zinco (mg)<\/p>",
+            "column1": "<p>0,8<\/p>",
+            "column2": "<p>0,6<\/p>",
+            "column3": "<p>5<\/p>"
+          }
+        },
+        "043d96a3-0edd-4ac2-bfbd-5d0e47535cdf": {
+          "type": "subtitle_tabs",
+          "settings": {
+            "text1": "<p>100% Natural<\/p>",
+            "icon1": "shopify:\/\/shop_images\/natural-icon.svg",
+            "text2": "<p>Low Carb<\/p>",
+            "icon2": "shopify:\/\/shop_images\/lowcarb-icon.svg",
+            "text3": "<p>Sem Glúten<\/p>",
+            "icon3": "shopify:\/\/shop_images\/glutenfree-icon.svg",
+            "text4": "<p>Sem Lactose<\/p>",
+            "icon4": "shopify:\/\/shop_images\/lactosefree-icon.svg",
+            "color": "#ffffff",
+            "background": "#8c3628"
+          }
+        }
+      },
+      "block_order": [
+        "6ff2de29-1e9a-4d8e-b797-1d594ed9457a",
+        "fe9aa46d-6add-46d5-98dc-37bd8028de32",
+        "dd179cbd-587c-490c-83ae-0c76ee8082bf",
+        "dcfd827b-8751-4d32-9824-3a6490732768",
+        "94891263-9648-4cd5-9c4c-16632ded6ece",
+        "ad93fb88-a36a-4dc5-ac25-60793e1a4454",
+        "d6c173f1-161e-4915-9457-8a67d45f24d0",
+        "dbfd5dbd-0063-4569-b395-de01bb60fa2b",
+        "3196c025-606b-4b13-a8e0-71fb8e67d482",
+        "dafe7888-0c6c-48f3-aa77-31c3279f5e70",
+        "4024f1ea-2263-4d87-8a07-bf409f4cf75b",
+        "0f2d2419-9c0f-4a69-8246-e80c3727e6ad",
+        "82e0a271-b954-4886-9c59-67f02023f5cc",
+        "0daf5bc8-0dd4-4600-883b-4431159214a4",
+        "d5bae421-5ac5-405d-b53a-a890a9e15383",
+        "c8e68a71-02b6-46b0-bcf3-48cfb85e0d06",
+        "364d18cf-cba0-4802-b38c-b6fc340f397c",
+        "05672720-c8d1-4d10-b790-f74a31645f6b",
+        "69cd5517-c33c-4630-a5cf-3c0fed6503ed",
+        "f23dda03-0d6d-4bc9-a1ab-6e420974b2b4",
+        "9641ddc5-d290-456c-84bb-3a2b0ffcc03e",
+        "38849443-3dbd-4f6d-b1a4-344305851563",
+        "2b3befa2-1d55-44bd-b295-cc4406fd60a6",
+        "09445f46-4cf1-43f3-8bcd-98806a0f5e83",
+        "08c14ac7-aa50-46b1-9585-dcb1aa34f828",
+        "2604862b-df75-4529-8f5b-736ab2437e76",
+        "1e2761b8-cecb-4e78-bfef-9d3a5742006c",
+        "1e9c09ff-2a0d-4a42-92c6-b82c5d2d6761",
+        "f890a445-9401-4bb3-9dfe-10bc7b93d984",
+        "9b27d2e6-23b1-4c9b-9c48-8bf3316ddaaa",
+        "a41487d8-d449-40d1-9aee-1c45480e7d7e",
+        "2efda194-bb9c-47a1-9150-2df2799153cf",
+        "8fe3668b-ac26-41af-bc14-04440f8a6528",
+        "045fefb6-2b47-462f-9c0d-d0864fd7b28d",
+        "f154142e-da73-45cc-a5c3-c530a7aa5edb",
+        "f8c53634-664a-4b3e-aa09-1623f2bb9dcd",
+        "99e4e9e6-4b5f-409a-b0a5-ed0ee35fdc12",
+        "9df0968d-dcfe-433f-9a22-57761f29dfae",
+        "b9812ac3-2c60-4a4e-922d-ce358e1f973d",
+        "609843d0-34d7-443c-b3e1-6f5ea1831ca7",
+        "342aed76-082a-4d6d-97de-acaf52bba673",
+        "b2d51123-359b-4185-a0ba-a5aeea05dc59",
+        "6794d0ab-71cc-41c8-ae66-7b60c0661c59",
+        "862c7c9b-2250-47dd-9a3a-5aa3acbe757c",
+        "cf6d73e0-276d-4bb2-97f7-dd51c684f0df",
+        "6ae9b53d-89f2-410c-b3ca-70e2b85dbcc3",
+        "8aed8bf4-0c2a-46d0-a028-9b32649f6d0c",
+        "8ea874a6-9e97-4db9-b28e-883b862f34cb",
+        "043d96a3-0edd-4ac2-bfbd-5d0e47535cdf"
+      ],
+      "custom_css": [
+        ".title {max-width: 260px;}",
+        ".title strong {background: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0653\/9309\/9000\/files\/tabela-line.svg?v=1697474818\") no-repeat bottom\/contain;}",
+        ".table__title h5 {font-size: 18px;}"
+      ],
+      "settings": {
+        "title": "<h2>Tabela <strong>nutricional<\/strong><\/h2>",
+        "subtitle": "",
+        "color_scheme": "",
+        "column": false,
+        "table_column": false,
+        "text_alignment": "left",
+        "title_width": 380,
+        "height": 36,
+        "width": 400,
+        "title_tabela1": "<h5>Tabela - Sabor Original<\/h5>",
+        "title_tabela2": "<h5>Tabela - Sabor Páprica<\/h5>",
+        "border-radius": 8,
+        "title-color": "#f2f2f2",
+        "title-background": "#090808",
+        "padding_top": 100,
+        "padding_bottom": 72
+      }
+    },
+    "ingredientes": {
+      "type": "reviews-by-turbo",
+      "blocks": {
+        "7997daa3-2333-423f-af2d-082aff9068a8": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-1.jpg",
+            "name": "<p>Farinha de amendoim<\/p>",
+            "job": "",
+            "message": "<p>O amendoim é rico em proteína vegetal. Tal alimento beneficia a saúde dos músculos, do coração, e ainda ajuda no ganho de massa magra.<\/p>"
+          }
+        },
+        "05469239-1a23-48ae-84d6-ec313790c56f": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-2.jpg",
+            "name": "<p>Proteína de ervilha<\/p>",
+            "job": "",
+            "message": "<p>Além de possuir baixíssimas calorias, a proteína isolada da ervilha auxilia no ganho de massa magra, acelera o metabolismo e a queima de gordura.<\/p>"
+          }
+        },
+        "75a4541b-898f-49d9-8caf-68d39fdbb949": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-3.jpg",
+            "name": "<p>Farinha de aveia<\/p>",
+            "job": "",
+            "message": "<p>Um substituto perfeito para a farinha de trigo. Ela é rica em nutrientes e tem o poder de aumentar a sensação de saciedade.<\/p>"
+          }
+        },
+        "fc73fe87-9f17-43c2-a8da-2ef36d08e432": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-4.jpg",
+            "name": "<p>Farinha de linhaça dourada<\/p>",
+            "job": "",
+            "message": "<p>Ajuda no processo de perda de peso, faz bem para a saúde do coração, é fonte de vitamina A e agentes antioxidantes, controla os hormônios e contribui para o funcionamento do intestino.<\/p>"
+          }
+        },
+        "ba04160c-0f95-4842-8cf2-0faf10e220f6": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-5.jpg",
+            "name": "<p>Gergelim<\/p>",
+            "job": "",
+            "message": "<p>As sementes de gergelim são ricas em magnésio, o que ajuda a reduzir a pressão arterial. Elas também são boas fontes de fibra e ajudam no controle do açúcar no sangue.<\/p>"
+          }
+        },
+        "c61f4563-49d8-4078-8644-e5078d725133": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-6.jpg",
+            "name": "<p>Farinha de semente de chia<\/p>",
+            "job": "",
+            "message": "<p>É rica em fibras , proteínas, vitaminas e minerais e ainda apresenta propriedades antioxidantes e anti-inflamatórias.<\/p>"
+          }
+        },
+        "6af67554-936f-4a9a-a7b4-bb23a652ec82": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-7.jpg",
+            "name": "<p>Fermento em pó<\/p>",
+            "job": "",
+            "message": "<p>Facilita o processo digestivo, favorece a saúde intestinal e fornece nutrientes ao organismo.<\/p>"
+          }
+        },
+        "a0152417-d443-40e4-be29-3747b94ea9fa": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-8.jpg",
+            "name": "<p>Sal do Himalia<\/p>",
+            "job": "",
+            "message": "<p>Aumenta a hidratação do corpo, regula a pressão arterial, melhora a circulação sanguínea, elimina toxinas do corpo e equilibra o pH.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "7997daa3-2333-423f-af2d-082aff9068a8",
+        "05469239-1a23-48ae-84d6-ec313790c56f",
+        "75a4541b-898f-49d9-8caf-68d39fdbb949",
+        "fc73fe87-9f17-43c2-a8da-2ef36d08e432",
+        "ba04160c-0f95-4842-8cf2-0faf10e220f6",
+        "c61f4563-49d8-4078-8644-e5078d725133",
+        "6af67554-936f-4a9a-a7b4-bb23a652ec82",
+        "a0152417-d443-40e4-be29-3747b94ea9fa"
+      ],
+      "custom_css": [
+        ".client-name {color: #fff; font-weight: 600; padding: 16px; background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);}",
+        ".review-card {margin-top: -72px;}",
+        ".reviews__container {background: linear-gradient(180deg, #321a16 50%, #fefefe 50%);}",
+        ".title__reviews {justify-content: center;}",
+        ".title > * {color: #fff; text-align: center; max-width: 592px;}",
+        ".client-message p {color: #56546a;}",
+        ".title strong {background: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0653\/9309\/9000\/files\/word-line.svg?v=1696942330\") no-repeat bottom\/contain;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "title": "<h2>Conheça os <strong>ingredientes<\/strong> por trás do nosso super pão<\/h2>",
+        "subtitle": "",
+        "show_view_all": false,
+        "view_all_link": "",
+        "color_scheme": "",
+        "card_color_scheme": "",
+        "swiper_on": true,
+        "center_slides": false,
+        "fixed_width": true,
+        "slides_width": 280,
+        "slides_width_mobile": 260,
+        "slides": 4,
+        "slides_mobile": 1.4,
+        "photo-cover": true,
+        "text_absolute": false,
+        "border-radius": 12,
+        "vertical-padding": 0,
+        "horizontal-padding": 0,
+        "photo-size": 124,
+        "photo-size-mobile": 54,
+        "info-flex": false,
+        "text-align": false,
+        "verified_text": "",
+        "order": "1,2,3",
+        "scale_slide": 100,
+        "scale_active_slide": 100,
+        "navigation": "rgba(0,0,0,0)",
+        "pagination": "rgba(0,0,0,0)",
+        "button_label": "Ver tabela nutricional",
+        "button_link": "",
+        "padding_top": 68,
+        "padding_bottom": 16
+      }
+    },
+    "0b2531d4-25b6-4b75-aa13-3626881bbde0": {
+      "type": "content-by-turbo",
+      "blocks": {
+        "template--16820089225464__0b2531d4-25b6-4b75-aa13-3626881bbde0-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
-      ],
-      "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-2",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-0": {
-          "type": "column",
-          "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "title": "<h2><strong>BREADY<\/strong> x Pão, Tapiocas e Wraps<\/h2>",
+            "text": "<p>Diferente dos pães comuns do mercado, que oferecem picos momentâneos de saciedade, o Bready foi cuidadosamente pensado para proporcionar uma saciedade prolongada (de forma natural, sem oscilação). Te ajudando a emagrecer e atingir suas metas de forma saudável.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "width": 100,
+            "content_position": "middle-center",
+            "text_alignment": "center",
+            "order_mobile": 1,
+            "width_mobile": 100,
+            "mobile_content_position": "middle-center",
+            "text_alignment_mobile": "center"
           }
         },
-        "column-1": {
-          "type": "column",
+        "template--16820089225464__0b2531d4-25b6-4b75-aa13-3626881bbde0-image-1": {
+          "type": "image",
           "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/grafico_a1bf9be6-9b36-42b2-bd60-4e17e892ac2b.png",
+            "image_mobile": "shopify:\/\/shop_images\/grafico_mobile.png",
+            "full_height": false,
+            "absolute": false,
+            "width": 100,
+            "content_position": "middle-center",
+            "order_mobile": 2,
+            "width_mobile": 100,
+            "mobile_content_position": "middle-center"
           }
         }
       },
       "block_order": [
-        "column-0",
-        "column-1"
+        "template--16820089225464__0b2531d4-25b6-4b75-aa13-3626881bbde0-text-1",
+        "template--16820089225464__0b2531d4-25b6-4b75-aa13-3626881bbde0-image-1"
+      ],
+      "custom_css": [
+        ".content {grid-template-columns: auto; gap: 42px; height: auto; max-width: 1000px; margin: 0 auto;}",
+        "h2 {font-weight: 400;}",
+        "strong {background: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0653\/9309\/9000\/files\/grafico-line.svg?v=1697207941\") no-repeat bottom\/contain; font-weight: 700;}",
+        ".mobile {margin: 0 -16px; width: calc(100% + 32px);}",
+        "@media (max-width: 750px) {h2 {display: flex; flex-direction: column; align-items: center; font-size: 24px; } strong {font-size: 32px; width: fit-content; padding: 0 30px; }}"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
+        "full_width": false,
+        "section_style": "adapt_image",
+        "section_height": 500,
+        "section_height_mobile": 500,
+        "border_radius": 0,
+        "color_scheme": "",
+        "reverse": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "related-products": {
-      "type": "related-products",
+    "faq": {
+      "type": "collapsibles-by-turbo",
+      "blocks": {
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>01<strong> Uma lata de Bready cria quantos Bready's?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        },
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>02 <strong>Tem alguma contra-indicação?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        },
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>03 <strong>Quais são os sabores?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        },
+        "3f82b9e9-b430-4a70-b4e2-deab77087292": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>04 <strong>Quanto tempo leva para preparar?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        },
+        "bf5b9d42-9f76-411a-9cc1-ae8d89c9ee59": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>05 <strong>Posso misturar com outros ingredientes?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        },
+        "98410de8-a7fd-4b16-b1f8-e58209e988d4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>06 <strong>Como funciona o pagamento?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-1",
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-2",
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-3",
+        "3f82b9e9-b430-4a70-b4e2-deab77087292",
+        "bf5b9d42-9f76-411a-9cc1-ae8d89c9ee59",
+        "98410de8-a7fd-4b16-b1f8-e58209e988d4"
+      ],
+      "custom_css": [
+        ".subtitle {background: linear-gradient(241deg, #b03d1e 6%, #ed6f4e 64%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; font-size: 16px; font-weight: 500; width: fit-content; letter-spacing: 2px;}",
+        ".title p {color: #495057; font-size: 16px;}",
+        ".collapsible__heading p {font-size: 24px; line-height: 130%; font-weight: 600; display: flex; align-items: center; color: rgba(var(--color-button));}",
+        "strong {font-size: 18px; line-height: 150%; margin-left: 20px; color: #495057;}"
+      ],
       "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "columns_desktop": 4,
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "title": "<h2>Perguntas mais frequentes<\/h2><p>Separamos algumas perguntas e respostas que podem te ajudar na sua decisão<\/p>",
+        "subtitle": "<p>Tire suas dúvidas<\/p>",
+        "color_scheme": "",
+        "column": false,
+        "collapsible_column": false,
+        "text_alignment": "left",
+        "title_width": 400,
+        "gap": 8,
+        "height": 28,
+        "width": 700,
+        "border-radius": 8,
+        "vertical-padding": 24,
+        "horizontal-padding": 32,
+        "border-color": "#f1f3f5",
+        "border-opacity": 100,
+        "lateral-borders": true,
+        "border-top": true,
+        "border-bottom": true,
+        "icon": "shopify:\/\/shop_images\/icon-plus.svg",
+        "icon-angle": 135,
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },
   "order": [
     "main",
-    "image-with-text",
-    "multicolumn",
-    "related-products"
+    "faixa-passante",
+    "2c18275d-f92b-4e80-8722-fdd92ef8e9a1",
+    "169720687149b79afc",
+    "9d40dd3a-b7b0-4e36-b6d7-80a1d1687b2c",
+    "ingredientes",
+    "0b2531d4-25b6-4b75-aa13-3626881bbde0",
+    "faq"
   ]
 }

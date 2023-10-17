@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "custom_css": [
+        ".main-blog {display: flex; flex-direction: column; gap: 50px;}"
+      ],
+      "settings": {
+        "title": "<h2>Conheça nosso blog 🧡<\/h2>",
+        "layout": "grid",
+        "show_image": true,
+        "image_height": "medium",
+        "show_date": true,
+        "show_author": false,
+        "article_link": "Ler mais",
+        "padding_top": 60,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

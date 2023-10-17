@@ -120,18 +120,7 @@ class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.renderActiveFacets(parsedHTML);
     FacetFiltersForm.renderAdditionalElements(parsedHTML);
 
-    if (countsToRender) {
-      const closestJSFilterID = event.target.closest('.js-filter').id;
-      const currentActiveID = document.activeElement.id;
-
-      if (closestJSFilterID) {
-        FacetFiltersForm.renderCounts(countsToRender, event.target.closest('.js-filter'));
-        FacetFiltersForm.renderMobileCounts(countsToRender, document.getElementById(closestJSFilterID));
-
-        const newElementToActivate = document.getElementById(currentActiveID);
-        if (newElementToActivate) newElementToActivate.focus();
-      }
-    }
+    if (countsToRender) FacetFiltersForm.renderCounts(countsToRender, event.target.closest('.js-filter'));
   }
 
   static renderActiveFacets(html) {
@@ -158,34 +147,18 @@ class FacetFiltersForm extends HTMLElement {
   }
 
   static renderCounts(source, target) {
-    const targetSummary = target.querySelector('.facets__summary');
-    const sourceSummary = source.querySelector('.facets__summary');
+    const targetElement = target.querySelector('.facets__selected');
+    const sourceElement = source.querySelector('.facets__selected');
 
-    if (sourceSummary && targetSummary) {
-      targetSummary.outerHTML = sourceSummary.outerHTML;
+    const targetElementAccessibility = target.querySelector('.facets__summary');
+    const sourceElementAccessibility = source.querySelector('.facets__summary');
+
+    if (sourceElement && targetElement) {
+      target.querySelector('.facets__selected').outerHTML = source.querySelector('.facets__selected').outerHTML;
     }
 
-    const targetWrapElement = target.querySelector('.facets-wrap');
-    const sourceWrapElement = source.querySelector('.facets-wrap');
-
-    if (sourceWrapElement && targetWrapElement) {
-      const isShowingMore = Boolean(target.querySelector('show-more-button .label-show-more.hidden'));
-      if (isShowingMore) {
-        sourceWrapElement
-          .querySelectorAll('.facets__item.hidden')
-          .forEach((hiddenItem) => hiddenItem.classList.replace('hidden', 'show-more-item'));
-      }
-
-      targetWrapElement.outerHTML = sourceWrapElement.outerHTML;
-    }
-  }
-
-  static renderMobileCounts(source, target) {
-    const targetFacetsList = target.querySelector('.mobile-facets__list');
-    const sourceFacetsList = source.querySelector('.mobile-facets__list');
-
-    if (sourceFacetsList && targetFacetsList) {
-      targetFacetsList.outerHTML = sourceFacetsList.outerHTML;
+    if (targetElementAccessibility && sourceElementAccessibility) {
+      target.querySelector('.facets__summary').outerHTML = source.querySelector('.facets__summary').outerHTML;
     }
   }
 

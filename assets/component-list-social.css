@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  gap: 16px;
 }
 
 @media only screen and (max-width: 749px) {
@@ -11,14 +12,17 @@
 }
 
 .list-social__item .icon {
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 6.9rem;
+  width: 6.9rem;
+  background: #321A16;
+  color: rgba(var(--color-button), 1);
+  border-radius: 8px;
 }
 
 .list-social__link {
   align-items: center;
   display: flex;
-  padding: 1.1rem;
+  padding: 0;
   color: rgb(var(--color-foreground));
 }
 
@@ -29,4 +33,7 @@
 
 .list-social__link:hover .icon {
   transform: scale(1.07);
+  color: rgba(var(--color-foreground));
+  background: linear-gradient(243.05deg, #ed6f4e -8.12%, #b03d1e 100.93%);
+  transition: all 0.2s ease-in;
 }

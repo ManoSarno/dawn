@@ -1,0 +1,735 @@
+{% style %}
+  .section__tables, .title__tables, .title {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem 3.2rem;
+    width: 100%;
+  }
+
+  .title {
+    width: unset;
+  }
+
+  .title__tables {
+    max-width: var(--width);
+    flex-shrink: 1;
+  }
+
+  .title > * {
+    word-break: normal;
+  }
+
+  .tables {
+    width: var(--width);
+    display: flex;
+    flex-shrink: 0;
+    min-width: max-content;
+  }
+
+  .tables__container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .tables__wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 100%;
+    max-width: var(--width);
+    font-size: 14px;
+  }
+
+  .tables__wrapper > * {
+    height: var(--height);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #EAECEF;
+    padding: 0 8px;
+  }
+
+  .tables__wrapper div:nth-last-child(-n + 4) {
+    border-bottom: 1px solid #090808;
+  }
+
+  .tables__wrapper div:empty {
+    display: flex !important;
+  }
+
+  .table__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 59px;
+    grid-column: 1 / span 4;
+  }
+
+  .row_title {
+    width: 100%;
+  }
+
+  .table__content, .table__heading-wrapper {
+    padding: var(--padding);
+  }
+
+  .table__wrapper {
+    text-align: left;
+  }
+
+  .table__heading-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .table__icon {
+    transition: .25s transform ease;
+    transform: rotate(0);
+  }
+
+  summary[aria-expanded="true"] > .table__icon {
+    transform: rotate(var(--angle));
+  }
+
+  .table__image {
+    position: relative;
+    width: var(--width);
+    top: var(--top);
+    left: var(--left);
+  }
+
+  .section-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .subtitle_tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.2rem;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    margin-top: 28px;
+  }
+
+  .subtitle_tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px;
+    height: 48px;
+    width: calc(50% - 16px);
+    min-width: max-content;
+    max-width: 176px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 12px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .section__tables {
+        flex-wrap: wrap;
+        align-items: center !important;
+    }
+
+    .tables__container {
+      margin-top: 26px;
+    }
+
+    .tables__wrapper {
+        max-width: unset;
+        min-width: 350px;
+    }
+
+    .title__tables {
+        max-width: 100%;
+    }
+
+    .tables {
+        width: 100%;
+        min-width: unset;
+    }
+  }
+
+  @media screen and (max-width: 990px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    .section-row {
+      flex-direction: column !important;
+    }
+
+    .table__image {
+      width: var(--widthMB);
+      top: var(--topMB);
+      left: var(--leftMB);
+    }
+
+    .tables__wrapper > * {
+        padding: 0 4px;
+    }
+
+    .tables__container {
+        padding: 0 20px 30px;
+    }
+
+    .tables {
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    .tables__container::-webkit-scrollbar {
+        height: 8px;
+        border-radius: 1rem;
+        background-color: rgb(231, 231, 231);
+    }
+    .tables__container::-webkit-scrollbar-track {
+        background-color: #8c352812;
+    }
+    .tables__container::-webkit-scrollbar-thumb {
+        background-color: #8C3628;
+    }
+
+    .table__content, .table__heading-wrapper {
+      padding: var(--paddingMB);
+    }
+
+    .subtitle_tabs {
+        gap: 10px;
+    }
+
+    .subtitle_tab {
+        width: calc(50% - 5px);
+    }
+  }
+{% endstyle %}
+
+{% liquid
+  assign has_image = false
+  assign has_2tables = false
+  for block in section.blocks
+    if block.type == 'image'
+      assign has_image = true
+      if forloop.index0 == 0
+        assign reverse = true
+      endif
+    endif
+    if block.type == 'tabela2'
+      assign has_2tables = true
+    endif
+  endfor
+%}
+
+<div
+  class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+  style="position: relative;"
+>
+  <div class="section__tables page-width-desktop {% if section.settings.column %}text-{{ section.settings.text_alignment }}{% else %}section-row{% endif %} text-mobile-{{ section.settings.text_alignment }}">
+    <div
+      class="title__tables page-width-tablet page-width-mobile"
+      style="--width: {% if section.settings.column %}100%{% else %}{{ section.settings.title_width }}px;{% endif %}"
+    >
+      {% if section.settings.subtitle != blank %}
+        <div class="subtitle">
+          {{ section.settings.subtitle }}
+        </div>
+      {% endif %}
+      <div class="title">
+        {{ section.settings.title }}
+      </div>
+      {% for block in section.blocks %}
+        {% if block.type == 'subtitle_tabs' %}
+          <div class="subtitle_tabs">
+            <div
+              class="subtitle_tab"
+              style="color: {{ block.settings.color }}; background-color: {{ block.settings.background }};"
+            >
+              {% if block.settings.icon1 != blank -%}
+                <img class="subtitle_tab-icon" src="{{ block.settings.icon1 | image_url }}">
+              {%- endif %}
+              {{ block.settings.text1 }}
+            </div>
+            <div
+              class="subtitle_tab"
+              style="color: {{ block.settings.color }}; background-color: {{ block.settings.background }};"
+            >
+              {% if block.settings.icon2 != blank -%}
+                <img class="subtitle_tab-icon" src="{{ block.settings.icon2 | image_url }}">
+              {%- endif %}
+              {{ block.settings.text2 }}
+            </div>
+            <div
+              class="subtitle_tab"
+              style="color: {{ block.settings.color }}; background-color: {{ block.settings.background }};"
+            >
+              {% if block.settings.icon3 != blank -%}
+                <img class="subtitle_tab-icon" src="{{ block.settings.icon3 | image_url }}">
+              {%- endif %}
+              {{ block.settings.text3 }}
+            </div>
+            <div
+              class="subtitle_tab"
+              style="color: {{ block.settings.color }}; background-color: {{ block.settings.background }};"
+            >
+              {% if block.settings.icon4 != blank -%}
+                <img class="subtitle_tab-icon" src="{{ block.settings.icon4 | image_url }}">
+              {%- endif %}
+              {{ block.settings.text4 }}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="tables" style="--width: calc(100% - {{ section.settings.title_width }}px - 32px);">
+      <div class="tables__container">
+        <div
+          class="tables__wrapper"
+          style="--width: {{ section.settings.width }}px; --height: {{ section.settings.height }}px;"
+        >
+          <div
+            class="table__title"
+            style="border-radius: {{ section.settings.border-radius }}px; --color-foreground: {{ section.settings.title-color | color_to_rgb | remove: 'rgb(' | remove: ')' }}; background-color: {{ section.settings.title-background }};"
+          >
+            {{ section.settings.title_tabela1 }}
+          </div>
+          <div></div>
+          <div><b>100g</b></div>
+          <div><b>20g</b></div>
+          <div><b>%VD</b></div>
+          {%- for block in section.blocks -%}
+            {% if block.type == 'tabela1' %}
+              <div class="row_title">{{ block.settings.title }}</div>
+              <div>{{ block.settings.column1 }}</div>
+              <div>{{ block.settings.column2 }}</div>
+              <div>{{ block.settings.column3 }}</div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% if has_2tables %}
+          <div
+            class="tables__wrapper"
+            style="--width: {{ section.settings.width }}px; --height: {{ section.settings.height }}px;"
+          >
+            <div
+              class="table__title"
+              style="border-radius: {{ section.settings.border-radius }}px; --color-foreground: {{ section.settings.title-color | color_to_rgb | remove: 'rgb(' | remove: ')' }}; background-color: {{ section.settings.title-background }};"
+            >
+              {{ section.settings.title_tabela2 }}
+            </div>
+            <div></div>
+            <div><b>100g</b></div>
+            <div><b>20g</b></div>
+            <div><b>%VD</b></div>
+            {%- for block in section.blocks -%}
+              {% if block.type == 'tabela2' %}
+                <div class="row_title">{{ block.settings.title }}</div>
+                <div>{{ block.settings.column1 }}</div>
+                <div>{{ block.settings.column2 }}</div>
+                <div>{{ block.settings.column3 }}</div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+        {%- for block in section.blocks -%}
+          {% if block.type == 'image' %}
+            {% if block.settings.image != blank %}
+              <img
+                class="table__image {% unless block.settings.image_mobile == blank %}desktop{% endunless %}"
+                src="{{ block.settings.image | image_url }}"
+                style="--width: {{ block.settings.width }}%; --widthMB: {{ block.settings.width_mobile }}%; {% if block.settings.absolute %}position: absolute; --top: {{ block.settings.top }}%; --left: {{ block.settings.left }}%; --topMB: {{ block.settings.top_mobile }}%; --leftMB: {{ block.settings.left_mobile }}%;{% endif %}"
+              >
+            {% endif %}
+            {% if block.settings.image_mobile != blank %}
+              <img
+                class="table__image mobile"
+                src="{{ block.settings.image_mobile | image_url }}"
+                style="--widthMB: {{ block.settings.width_mobile }}%; {% if block.settings.absolute %}position: absolute; --topMB: {{ block.settings.top_mobile }}%; --leftMB: {{ block.settings.left_mobile }}%;{% endif %}"
+              >
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tabela nutricional Turbo",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Título da seção"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtítulo da seção"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "background-1",
+      "label": "Esquema de cores"
+    },
+    {
+      "type": "checkbox",
+      "id": "column",
+      "label": "Alinhamento em coluna",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "table_column",
+      "label": "Alinhamento de imagem e tabela em coluna",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Esquerda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "right",
+          "label": "Direita"
+        }
+      ],
+      "default": "center",
+      "label": "Alinhamento do texto",
+      "info": "Apenas caso o alinhamento seja em coluna"
+    },
+    {
+      "type": "range",
+      "min": 0,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "id": "title_width",
+      "label": "Largura máxima do título da seção",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "id": "height",
+      "label": "Altura das linhas das tabelas",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "min": 400,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "id": "width",
+      "label": "Largura máxima das tabelas",
+      "default": 600
+    },
+    {
+      "type": "richtext",
+      "id": "title_tabela1",
+      "label": "Título da tabela 1",
+      "default": "<h5>Tabela - Sabor Original</h5>"
+    },
+    {
+      "type": "richtext",
+      "id": "title_tabela2",
+      "label": "Título da tabela 2",
+      "default": "<h5>Tabela - Sabor Páprica</h5>"
+    },
+    {
+      "type": "range",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "id": "border-radius",
+      "label": "Raio da borda dos títulos das tabelas",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "title-color",
+      "label": "Cor dos títulos das tabelas",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "title-background",
+      "label": "Cor do background dos títulos das tabelas",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "PREENCHIMENTO DA SEÇÃO"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Preenchimento superior",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Preenchimento inferior",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subtitle_tabs",
+      "name": "Subtítulo ícones e textos",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text1",
+          "default": "<p>Subtítulo</p>",
+          "label": "Texto 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon1",
+          "label": "Ícone 1"
+        },
+        {
+          "type": "richtext",
+          "id": "text2",
+          "default": "<p>Subtítulo</p>",
+          "label": "Texto 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon2",
+          "label": "Ícone 2"
+        },
+        {
+          "type": "richtext",
+          "id": "text3",
+          "default": "<p>Subtítulo</p>",
+          "label": "Texto 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon3",
+          "label": "Ícone 3"
+        },
+        {
+          "type": "richtext",
+          "id": "text4",
+          "default": "<p>Subtítulo</p>",
+          "label": "Texto 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon4",
+          "label": "Ícone 4"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "default": "#fff",
+          "label": "Cor do texto"
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "default": "#8C3628",
+          "label": "Cor do background"
+        }
+      ]
+    },
+    {
+      "type": "tabela1",
+      "name": "Linha da tabela 1",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "default": "<p>Título da linha</p>",
+          "label": "Título da linha"
+        },
+        {
+          "type": "richtext",
+          "id": "column1",
+          "default": "<p>0</p>",
+          "label": "Coluna 1"
+        },
+        {
+          "type": "richtext",
+          "id": "column2",
+          "default": "<p>0</p>",
+          "label": "Coluna 2"
+        },
+        {
+          "type": "richtext",
+          "id": "column3",
+          "default": "<p>0</p>",
+          "label": "Coluna 3"
+        }
+      ]
+    },
+    {
+      "type": "tabela2",
+      "name": "Linha da tabela 2",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "default": "<p>Título da linha</p>",
+          "label": "Título da linha"
+        },
+        {
+          "type": "richtext",
+          "id": "column1",
+          "default": "<p>0</p>",
+          "label": "Coluna 1"
+        },
+        {
+          "type": "richtext",
+          "id": "column2",
+          "default": "<p>0</p>",
+          "label": "Coluna 2"
+        },
+        {
+          "type": "richtext",
+          "id": "column3",
+          "default": "<p>0</p>",
+          "label": "Coluna 3"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Imagem",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagem para desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Imagem para dispositivo móvel"
+        },
+        {
+          "type": "checkbox",
+          "id": "absolute",
+          "label": "Imagem com posição absoluta",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "width",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 50,
+          "label": "Largura da imagem no desktop"
+        },
+        {
+          "type": "range",
+          "id": "top",
+          "label": "Posição em relação ao topo no desktop",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "left",
+          "label": "Posição em relação à esquerda no desktop",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "LAYOUT PARA DISPOSITIVO MÓVEL"
+        },
+        {
+          "type": "range",
+          "id": "width_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 50,
+          "label": "Largura da imagem em dispositivo móvel"
+        },
+        {
+          "type": "range",
+          "id": "top_mobile",
+          "label": "Posição em relação ao topo em dispositivo móvel",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "left_mobile",
+          "label": "Posição em relação à esquerda em dispositivo móvel",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tabela nutricional Turbo",
+      "blocks": [
+        {
+          "type": "tabela1"
+        },
+        {
+          "type": "tabela2"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

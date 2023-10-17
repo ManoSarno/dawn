@@ -1,210 +1,840 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "81d0447c-3b3a-428a-b411-25a26227c289": {
+      "type": "slider-by-turbo",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "066d40fe-a582-4528-8e3b-26829552e8cf": {
+          "type": "slider",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "color_scheme": "background-1",
+            "image": "shopify:\/\/shop_images\/image_hero.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/image_hero-mobile.jpg",
+            "max_width": 480,
+            "desktop_content_position": "middle-left",
+            "text_alignment": "left",
+            "mobile_content_position": "top-center",
+            "text_alignment_mobile": "center",
+            "slider_text": "<h1>A revolução dos alimentos chegou!<\/h1><p>Um pão incrivelmente proteico, delicioso e prático<\/p>",
+            "button_text": "Quero provar",
+            "button_link": "shopify:\/\/products\/kit-2-unidades-original"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "066d40fe-a582-4528-8e3b-26829552e8cf"
+      ],
+      "custom_css": [
+        ".banner-box {padding-top: 10rem; padding-bottom: 27.2rem;}",
+        ".slider-text p {font-size: 1.8rem;}",
+        ".fixed_height {height: calc(100vh - 14rem);}",
+        "@media (max-width: 749px) {.fixed_height {height: calc(100vh - 12rem); } .banner-box {padding-top: 4.8rem; max-width: 35.4rem; } .button {width: 100%; }}",
+        "@media (max-width: 380px) {.fixed_height {height: calc(100vh - 14.1rem); }}"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "inverse",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
         "color_scheme": "background-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
+        "slides_per_view": 1,
+        "slides_per_view_mobile": "1",
+        "space_between": 0,
+        "adapt_height": false,
+        "slider_height": 800,
+        "autoplay": false,
+        "navigation": "",
+        "pagination": ""
       }
     },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
+    "ca694306-d7a3-489f-87a5-8a719ab78a86": {
       "type": "multicolumn",
       "blocks": {
-        "column1": {
+        "template--16820088832248__ca694306-d7a3-489f-87a5-8a719ab78a86-column-1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "image": "shopify:\/\/shop_images\/15g-protein.png",
+            "title": "<h3>15g de Proteínas<\/h3>",
+            "text": "<p>O Bready é altamente proteico. Perfeito para quem busca construir músculos torneados.<\/p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column2": {
+        "template--16820088832248__ca694306-d7a3-489f-87a5-8a719ab78a86-column-2": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "image": "shopify:\/\/shop_images\/low-carb.png",
+            "title": "<h3>Low Carb<\/h3>",
+            "text": "<p>Saboreie sem peso na consciência. Carboidrato reduzido: para não engordar.<\/p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column3": {
+        "template--16820088832248__ca694306-d7a3-489f-87a5-8a719ab78a86-column-3": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "image": "shopify:\/\/shop_images\/gluten-free.png",
+            "title": "<h3>Sem Glúten<\/h3>",
+            "text": "<p>Pessoas alérgicas a glúten estão 100% seguras ao se deliciarem com o Bready.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "14070771-ab1c-4f59-af11-ee2657f684cd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/practical.png",
+            "title": "<h3>Praticidade<\/h3>",
+            "text": "<p>Um minuto e meio. Esse é o tempo estimado para esse super pão ficar pronto.<\/p>",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "template--16820088832248__ca694306-d7a3-489f-87a5-8a719ab78a86-column-1",
+        "template--16820088832248__ca694306-d7a3-489f-87a5-8a719ab78a86-column-2",
+        "template--16820088832248__ca694306-d7a3-489f-87a5-8a719ab78a86-column-3",
+        "14070771-ab1c-4f59-af11-ee2657f684cd"
+      ],
+      "custom_css": [
+        ".multicolumn-card__image-wrapper {margin: 0;}",
+        ".multicolumn-card__image {height: 32px; position: relative;}",
+        ".media--adapt {padding-bottom: 0 !important;}",
+        ".multicolumn-card__info {padding: 1.6rem 0 0; font-size: 18px; color: #dee2e6;}"
       ],
       "settings": {
         "title": "",
-        "heading_size": "h1",
         "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "card_heading_size": "h4",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "5b5d6df5-c382-4dc7-93e7-6e68d6be3b2f": {
+      "type": "content-by-turbo",
+      "blocks": {
+        "template--16820088832248__5b5d6df5-c382-4dc7-93e7-6e68d6be3b2f-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/content-image-1.png",
+            "full_height": false,
+            "absolute": false,
+            "width": 50,
+            "content_position": "middle-center",
+            "order_mobile": 1,
+            "width_mobile": 100,
+            "mobile_content_position": "middle-center"
+          }
+        },
+        "template--16820088832248__5b5d6df5-c382-4dc7-93e7-6e68d6be3b2f-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "<h5>Coma pão sem sair da dieta<\/h5>",
+            "text": "<h2>Como funciona?<\/h2><p>Dentro de cada lata existe um pó especial — produzido a partir de ingredientes naturais estrategicamente selecionados. É a partir desse pó “mágico” que nasce cada #meubready :)<\/p><h2>O que é o Bready?<\/h2><p>O Bready é uma mistura proteica capaz de criar pães inovadores e incrivelmente mais nutritivos que os convencionais. Além de saborosos, eles são altamente saudáveis.<\/p>",
+            "button_label": "Ver modo de preparo",
+            "button_link": "shopify:\/\/blogs\/curtindo-minha-companhia",
+            "button_style_secondary": false,
+            "width": 46,
+            "content_position": "bottom-right",
+            "text_alignment": "left",
+            "order_mobile": 2,
+            "width_mobile": 100,
+            "mobile_content_position": "middle-center",
+            "text_alignment_mobile": "left"
+          }
+        }
+      },
+      "block_order": [
+        "template--16820088832248__5b5d6df5-c382-4dc7-93e7-6e68d6be3b2f-image-1",
+        "template--16820088832248__5b5d6df5-c382-4dc7-93e7-6e68d6be3b2f-text-1"
+      ],
+      "custom_css": [
+        "h2 {font-size: 32px;}",
+        "p {color: #495057; margin: 16px 0 32px;}",
+        "p:last-of-type {margin-bottom: 16px;}",
+        "h5 {font-size: 16px; font-weight: 500; letter-spacing: 1.9px; text-transform: uppercase; background: linear-gradient(241deg, #b03d1e 6.27%, #ed6f4e 64.21%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}",
+        "@media (min-width: 991px) {.content__text-wrapper {padding: 32px 0; }}",
+        "@media (max-width: 990px) {.content {margin-top: -50px; background: transparent; } .content__image-wrapper {max-width: 500px; }}"
+      ],
+      "settings": {
+        "full_width": false,
+        "section_style": "auto",
+        "section_height": 500,
+        "section_height_mobile": 500,
+        "border_radius": 0,
+        "color_scheme": "",
+        "reverse": false,
+        "padding_top": 28,
+        "padding_bottom": 100
+      }
+    },
+    "6150ce5a-4e41-48a4-8c05-faee81aee112": {
+      "type": "faixa-passante-by-turbo",
+      "blocks": {
+        "94e7cfd8-f48b-43c5-b89e-10b0183a6be6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-1.jpg",
+            "full_height": true
+          }
+        },
+        "4a6f417d-d65a-453b-985e-ffbf537351a1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-2.jpg",
+            "full_height": true
+          }
+        },
+        "c83fdf62-e04f-4d43-adac-f9733b0367a6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-3.jpg",
+            "full_height": true
+          }
+        },
+        "a2cd39c2-52e1-4bfe-adae-609e5698c7ca": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-4.jpg",
+            "full_height": true
+          }
+        },
+        "c422f5ee-fe45-4475-817f-f2c1a7863ba7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-5.jpg",
+            "full_height": true
+          }
+        },
+        "3370bb76-06ad-4ebf-a827-c389ff296dc9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-6.jpg",
+            "full_height": true
+          }
+        },
+        "2f32d119-681c-49db-b575-dbca5ed0c758": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-7.jpg",
+            "full_height": true
+          }
+        },
+        "20f8f8e2-e516-4bbb-b2ea-202224306655": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-8.jpg",
+            "full_height": true
+          }
+        },
+        "aef271db-dd90-4fd6-a0f8-29d21315deea": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passante-9.jpg",
+            "full_height": true
+          }
+        }
+      },
+      "block_order": [
+        "94e7cfd8-f48b-43c5-b89e-10b0183a6be6",
+        "4a6f417d-d65a-453b-985e-ffbf537351a1",
+        "c83fdf62-e04f-4d43-adac-f9733b0367a6",
+        "a2cd39c2-52e1-4bfe-adae-609e5698c7ca",
+        "c422f5ee-fe45-4475-817f-f2c1a7863ba7",
+        "3370bb76-06ad-4ebf-a827-c389ff296dc9",
+        "2f32d119-681c-49db-b575-dbca5ed0c758",
+        "20f8f8e2-e516-4bbb-b2ea-202224306655",
+        "aef271db-dd90-4fd6-a0f8-29d21315deea"
+      ],
+      "settings": {
+        "height": 110,
+        "padding": 0,
+        "marquee-color": "#fefefe",
+        "margin": 16,
+        "text-size": 16
+      }
+    },
+    "23b5a030-b946-4880-89f6-b99224766ea0": {
+      "type": "multicolumn",
+      "blocks": {
+        "b9046769-95ae-4fe7-876f-eacd76b34e93": {
+          "type": "product",
+          "settings": {
+            "product": "bready",
+            "product_description": false,
+            "description": "<p>(20 porções)<\/p>",
+            "variant_number": 3,
+            "button_label": "Quero provar",
+            "has_stars": true,
+            "reviews_number": "<p>+243<\/p>"
+          }
+        },
+        "411ed7c5-79dd-4097-acd5-fe9cab07e560": {
+          "type": "product",
+          "settings": {
+            "product": "bready",
+            "product_description": false,
+            "description": "<p>(20 porções)<\/p>",
+            "variant_number": 1,
+            "button_label": "Quero provar",
+            "has_stars": true,
+            "reviews_number": "<p>+178<\/p>"
+          }
+        },
+        "7105c1fb-30f7-48a8-92c2-da8b8cc4737d": {
+          "type": "custom",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_2_1.png",
+            "title": "<h3>Escolha o próximo sabor<\/h3>",
+            "description": "<p>Nos ajude a escolher o próximo sabor<\/p>",
+            "button_label": "Quero provar",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "b9046769-95ae-4fe7-876f-eacd76b34e93",
+        "411ed7c5-79dd-4097-acd5-fe9cab07e560",
+        "7105c1fb-30f7-48a8-92c2-da8b8cc4737d"
+      ],
+      "custom_css": [
+        ".button {margin: 0; padding: 16px; width: 248px;}",
+        "p {color: #495057;}",
+        ".highlight-card__title,.highlight-card__description {max-width: 220px; margin: 0 auto;}",
+        ".grid__item {padding: 16px 16px 32px; border-radius: 12px; border: 1px solid #eaecef; max-width: 50%;}",
+        ".grid__item:hover {background: #f8f9fa;}",
+        ".price--highlight {font-size: 20px; font-weight: 600; line-height: 130%;}",
+        "@media (max-width: 749px) {.grid__item {max-width: 400px; }}"
+      ],
+      "settings": {
+        "title": "",
+        "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 3,
         "column_alignment": "center",
         "background_style": "none",
+        "card_heading_size": "h3",
         "button_label": "",
         "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "background-1",
+        "color_scheme": "",
         "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "swipe_on_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "414a38a3-6e64-48e2-ae0f-fa7c717b7987": {
+      "type": "reviews-by-turbo",
+      "blocks": {
+        "template--16820088832248__414a38a3-6e64-48e2-ae0f-fa7c717b7987-review-1": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/reviews-1_04116ca9-ef41-4998-8c0a-19d09c9cacf5.jpg",
+            "name": "<p>Nome & Sobrenome<\/p>",
+            "job": "",
+            "message": "<h4>Simplesmente encantada com a qualidade!<\/h4><p>O Bready dá uma sensação muito prolongada de saciedade. Demoro bastante pra sentir fome depois que como um.<\/p>"
+          }
+        },
+        "54e1cbf7-c467-4831-9811-04220549a350": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/reviews-2_d4a0bdc8-5597-4589-81cf-ecf1c4177178.jpg",
+            "name": "<p>Nome & Sobrenome<\/p>",
+            "job": "",
+            "message": "<h4>Simplesmente encantada com a qualidade!<\/h4><p>O Bready dá uma sensação muito prolongada de saciedade. Demoro bastante pra sentir fome depois que como um.<\/p>"
+          }
+        },
+        "20ff58e3-8c75-41f4-9cb0-c6fee55c205c": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/reviews-3_7f7d0c63-ae2f-4db1-a0d8-aa712334fd70.jpg",
+            "name": "<p>Nome & Sobrenome<\/p>",
+            "job": "",
+            "message": "<h4>Simplesmente encantada com a qualidade!<\/h4><p>O Bready dá uma sensação muito prolongada de saciedade. Demoro bastante pra sentir fome depois que como um.<\/p>"
+          }
+        },
+        "eb8ad074-848c-4403-a941-880a42f5bd9b": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/reviews-4_1c301034-d51b-4c2d-a22f-1c5272935618.jpg",
+            "name": "<p>Nome & Sobrenome<\/p>",
+            "job": "",
+            "message": "<h4>Simplesmente encantada com a qualidade!<\/h4><p>O Bready dá uma sensação muito prolongada de saciedade. Demoro bastante pra sentir fome depois que como um.<\/p>"
+          }
+        },
+        "613b2e53-0f63-4715-985f-62c5b52d0f3d": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/reviews-1_04116ca9-ef41-4998-8c0a-19d09c9cacf5.jpg",
+            "name": "<p>Nome & Sobrenome<\/p>",
+            "job": "",
+            "message": "<h4>Simplesmente encantada com a qualidade!<\/h4><p>O Bready dá uma sensação muito prolongada de saciedade. Demoro bastante pra sentir fome depois que como um.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16820088832248__414a38a3-6e64-48e2-ae0f-fa7c717b7987-review-1",
+        "54e1cbf7-c467-4831-9811-04220549a350",
+        "20ff58e3-8c75-41f4-9cb0-c6fee55c205c",
+        "eb8ad074-848c-4403-a941-880a42f5bd9b",
+        "613b2e53-0f63-4715-985f-62c5b52d0f3d"
+      ],
+      "custom_css": [
+        ".client-info,.info-text,.client-name {width: 100%;}",
+        ".client-name {color: #fff; font-size: 16px; font-weight: 600; padding: 16px; background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);}",
+        ".review-card {z-index: 2; margin-top: -72px;}",
+        ".reviews__container {background: linear-gradient(180deg, #fff3dc 40%, #fefefe 40%);}",
+        ".client-message p {color: #56546a;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "title": "<h2>Provam e amam 🧡<\/h2>",
+        "subtitle": "<p><strong>Sabor<\/strong> & <strong>saúde<\/strong> alinhados<\/p>",
+        "show_view_all": false,
+        "view_all_link": "",
+        "color_scheme": "",
+        "card_color_scheme": "",
+        "swiper_on": true,
+        "center_slides": false,
+        "fixed_width": false,
+        "slides_width": 400,
+        "slides_width_mobile": 150,
+        "slides": 4,
+        "slides_mobile": 1.4,
+        "photo-cover": true,
+        "text_absolute": false,
+        "border-radius": 12,
+        "vertical-padding": 0,
+        "horizontal-padding": 0,
+        "photo-size": 124,
+        "photo-size-mobile": 54,
+        "info-flex": false,
+        "text-align": false,
+        "verified_text": "",
+        "order": "1,2,3",
+        "scale_slide": 100,
+        "scale_active_slide": 100,
+        "navigation": "#000000",
+        "navigation_custom_right": "shopify:\/\/shop_images\/Active_Icon_Container.svg",
+        "navigation_custom_left": "shopify:\/\/shop_images\/Inactive_Icon_Container.svg",
+        "pagination": "#212529",
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 68,
+        "padding_bottom": 88
+      }
+    },
+    "7301a834-5841-4826-890b-c1a5d9358300": {
+      "type": "blog-by-turbo",
+      "blocks": {
+        "template--16820088832248__7301a834-5841-4826-890b-c1a5d9358300-article-1": {
+          "type": "article",
+          "settings": {
+            "article": "curtindo-minha-companhia\/hamburger-bready"
+          }
+        },
+        "template--16820088832248__7301a834-5841-4826-890b-c1a5d9358300-article-2": {
+          "type": "article",
+          "settings": {
+            "article": "curtindo-minha-companhia\/panqueca-bready"
+          }
+        },
+        "template--16820088832248__7301a834-5841-4826-890b-c1a5d9358300-article-3": {
+          "type": "article",
+          "settings": {
+            "article": "curtindo-minha-companhia\/pasta-de-frango"
+          }
+        },
+        "77ade18d-c20a-43e2-9231-ddb6eba74795": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/blog-decor.png",
+            "width": 500,
+            "top": 100,
+            "left": 0,
+            "image_mobile": "shopify:\/\/shop_images\/blog-decor_mobile.png",
+            "width_mobile": 160,
+            "top_mobile": 0,
+            "left_mobile": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--16820088832248__7301a834-5841-4826-890b-c1a5d9358300-article-1",
+        "template--16820088832248__7301a834-5841-4826-890b-c1a5d9358300-article-2",
+        "template--16820088832248__7301a834-5841-4826-890b-c1a5d9358300-article-3",
+        "77ade18d-c20a-43e2-9231-ddb6eba74795"
+      ],
+      "custom_css": [
+        ".title strong {background: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0653\/9309\/9000\/files\/word-line-2.svg?v=1696960656\") no-repeat bottom\/contain;}",
+        ".decor-image {transform: translateY(-100%) translate(-238px, 120px);}",
+        ".article-card__text {height: 75px; overflow: hidden;}",
+        "@media (max-width: 990px) {.decor-image {transform: translate(-100%, -15px) translateX(54px); } .article-card__text {height: 63px; } h4 {font-size: 16px; }}"
+      ],
+      "settings": {
+        "title": "<h2>Faça deliciosas <strong>receitas<\/strong> com o seu Bready 🍞<\/h2>",
+        "subtitle": "",
+        "color_scheme": "",
+        "column": false,
+        "blog_column": true,
+        "title_width": 400,
+        "text_alignment": "left",
+        "gap": 16,
+        "width": 600,
+        "article_link": "Ver receita",
+        "button_label": "Ver todas as receitas",
+        "button_link": "shopify:\/\/blogs\/curtindo-minha-companhia",
+        "padding_top": 44,
+        "padding_bottom": 120
+      }
+    },
+    "781a7388-9a18-49e8-8ad4-026444854efe": {
+      "type": "reviews-by-turbo",
+      "blocks": {
+        "7997daa3-2333-423f-af2d-082aff9068a8": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-1.jpg",
+            "name": "<p>Farinha de amendoim<\/p>",
+            "job": "",
+            "message": "<p>O amendoim é rico em proteína vegetal. Tal alimento beneficia a saúde dos músculos, do coração, e ainda ajuda no ganho de massa magra.<\/p>"
+          }
+        },
+        "05469239-1a23-48ae-84d6-ec313790c56f": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-2.jpg",
+            "name": "<p>Proteína de ervilha<\/p>",
+            "job": "",
+            "message": "<p>Além de possuir baixíssimas calorias, a proteína isolada da ervilha auxilia no ganho de massa magra, acelera o metabolismo e a queima de gordura.<\/p>"
+          }
+        },
+        "75a4541b-898f-49d9-8caf-68d39fdbb949": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-3.jpg",
+            "name": "<p>Farinha de aveia<\/p>",
+            "job": "",
+            "message": "<p>Um substituto perfeito para a farinha de trigo. Ela é rica em nutrientes e tem o poder de aumentar a sensação de saciedade.<\/p>"
+          }
+        },
+        "fc73fe87-9f17-43c2-a8da-2ef36d08e432": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-4.jpg",
+            "name": "<p>Farinha de linhaça dourada<\/p>",
+            "job": "",
+            "message": "<p>Ajuda no processo de perda de peso, faz bem para a saúde do coração, é fonte de vitamina A e agentes antioxidantes, controla os hormônios e contribui para o funcionamento do intestino.<\/p>"
+          }
+        },
+        "ba04160c-0f95-4842-8cf2-0faf10e220f6": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-5.jpg",
+            "name": "<p>Gergelim<\/p>",
+            "job": "",
+            "message": "<p>As sementes de gergelim são ricas em magnésio, o que ajuda a reduzir a pressão arterial. Elas também são boas fontes de fibra e ajudam no controle do açúcar no sangue.<\/p>"
+          }
+        },
+        "c61f4563-49d8-4078-8644-e5078d725133": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-6.jpg",
+            "name": "<p>Farinha de semente de chia<\/p>",
+            "job": "",
+            "message": "<p>É rica em fibras , proteínas, vitaminas e minerais e ainda apresenta propriedades antioxidantes e anti-inflamatórias.<\/p>"
+          }
+        },
+        "6af67554-936f-4a9a-a7b4-bb23a652ec82": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-7.jpg",
+            "name": "<p>Fermento em pó<\/p>",
+            "job": "",
+            "message": "<p>Facilita o processo digestivo, favorece a saúde intestinal e fornece nutrientes ao organismo.<\/p>"
+          }
+        },
+        "a0152417-d443-40e4-be29-3747b94ea9fa": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ingrediente-8.jpg",
+            "name": "<p>Sal do Himalia<\/p>",
+            "job": "",
+            "message": "<p>Aumenta a hidratação do corpo, regula a pressão arterial, melhora a circulação sanguínea, elimina toxinas do corpo e equilibra o pH.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "7997daa3-2333-423f-af2d-082aff9068a8",
+        "05469239-1a23-48ae-84d6-ec313790c56f",
+        "75a4541b-898f-49d9-8caf-68d39fdbb949",
+        "fc73fe87-9f17-43c2-a8da-2ef36d08e432",
+        "ba04160c-0f95-4842-8cf2-0faf10e220f6",
+        "c61f4563-49d8-4078-8644-e5078d725133",
+        "6af67554-936f-4a9a-a7b4-bb23a652ec82",
+        "a0152417-d443-40e4-be29-3747b94ea9fa"
+      ],
+      "custom_css": [
+        ".client-name {color: #fff; font-weight: 600; padding: 16px; background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);}",
+        ".review-card {margin-top: -72px;}",
+        ".reviews__container {background: linear-gradient(180deg, #321a16 50%, #fefefe 50%);}",
+        ".title__reviews {justify-content: center;}",
+        ".title > * {color: #fff; text-align: center; max-width: 592px;}",
+        ".client-message p {color: #56546a;}",
+        ".title strong {background: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0653\/9309\/9000\/files\/word-line.svg?v=1696942330\") no-repeat bottom\/contain;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "title": "<h2>Conheça os <strong>ingredientes<\/strong> por trás do nosso super pão<\/h2>",
+        "subtitle": "",
+        "show_view_all": false,
+        "view_all_link": "",
+        "color_scheme": "",
+        "card_color_scheme": "",
+        "swiper_on": true,
+        "center_slides": false,
+        "fixed_width": true,
+        "slides_width": 280,
+        "slides_width_mobile": 260,
+        "slides": 4,
+        "slides_mobile": 1.4,
+        "photo-cover": true,
+        "text_absolute": false,
+        "border-radius": 12,
+        "vertical-padding": 0,
+        "horizontal-padding": 0,
+        "photo-size": 124,
+        "photo-size-mobile": 54,
+        "info-flex": false,
+        "text-align": false,
+        "verified_text": "",
+        "order": "1,2,3",
+        "scale_slide": 100,
+        "scale_active_slide": 100,
+        "navigation": "rgba(0,0,0,0)",
+        "pagination": "rgba(0,0,0,0)",
+        "button_label": "Ver tabela nutricional",
+        "button_link": "",
+        "padding_top": 68,
+        "padding_bottom": 16
+      }
+    },
+    "9cf334cf-8799-4e76-8fb4-3de0af537d30": {
+      "type": "reviews-by-turbo",
+      "blocks": {
+        "32abcd85-f72a-4fe6-a2f7-64b901633f3e": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/insta-1.jpg",
+            "name": "",
+            "job": "",
+            "message": ""
+          }
+        },
+        "337e659d-a7ca-4134-ac4b-593028e1ac0b": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/insta-2.jpg",
+            "name": "",
+            "job": "",
+            "message": ""
+          }
+        },
+        "8a88b9b2-640f-4e4f-ba80-8fc37d4b0c60": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/insta-3.jpg",
+            "name": "",
+            "job": "",
+            "message": ""
+          }
+        },
+        "73798bdf-077f-4641-8f84-a15a0d5992fc": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/insta-4.jpg",
+            "name": "",
+            "job": "",
+            "message": ""
+          }
+        },
+        "5e7c9f2c-932a-4d22-becc-77e0eeefd8c5": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/insta-5.jpg",
+            "name": "",
+            "job": "",
+            "message": ""
+          }
+        },
+        "30ca87d2-ff5b-4403-9063-1f1b4e79a7d6": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/insta-6.jpg",
+            "name": "",
+            "job": "",
+            "message": ""
+          }
+        }
+      },
+      "block_order": [
+        "32abcd85-f72a-4fe6-a2f7-64b901633f3e",
+        "337e659d-a7ca-4134-ac4b-593028e1ac0b",
+        "8a88b9b2-640f-4e4f-ba80-8fc37d4b0c60",
+        "73798bdf-077f-4641-8f84-a15a0d5992fc",
+        "5e7c9f2c-932a-4d22-becc-77e0eeefd8c5",
+        "30ca87d2-ff5b-4403-9063-1f1b4e79a7d6"
+      ],
+      "custom_css": [
+        ".reviews__container {margin: 100px 0 0;}",
+        ".review-card,.navigation-space {display: none;}",
+        ".title__reviews {justify-content: center; text-align: center;}",
+        ".swiper-button-next,.swiper-button-prev {bottom: 0; top: unset; left: 50%; transform: translateX(8px);}",
+        ".swiper-button-prev {transform: translateX(-49px);}",
+        "p {margin-top: 26px; z-index: 2;}",
+        "a {padding-top: 26px; font-weight: 600; text-decoration: none; color: #212529; background: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0653\/9309\/9000\/files\/instagram-2.svg?v=1697040218\") no-repeat top;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "title": "<h2>Nos acompanhe nas redes<\/h2><p><a href=\"https:\/\/www.instagram.com\/meubready\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/meubready\/\">@meubready<\/a><\/p>",
+        "subtitle": "",
+        "show_view_all": false,
+        "view_all_link": "",
+        "background": "shopify:\/\/shop_images\/background-insta.png",
+        "color_scheme": "accent-2",
+        "card_color_scheme": "background-1",
+        "swiper_on": true,
+        "center_slides": false,
+        "fixed_width": true,
+        "slides_width": 280,
+        "slides_width_mobile": 260,
+        "slides": 4,
+        "slides_mobile": 1.4,
+        "photo-cover": true,
+        "text_absolute": false,
+        "border-radius": 12,
+        "vertical-padding": 0,
+        "horizontal-padding": 0,
+        "photo-size": 124,
+        "photo-size-mobile": 54,
+        "info-flex": false,
+        "text-align": false,
+        "verified_text": "",
+        "order": "1,2,3",
+        "scale_slide": 100,
+        "scale_active_slide": 100,
+        "navigation": "rgba(0,0,0,0)",
+        "navigation_custom_right": "shopify:\/\/shop_images\/Active_Icon_Container.svg",
+        "navigation_custom_left": "shopify:\/\/shop_images\/Inactive_Icon_Container.svg",
+        "pagination": "rgba(0,0,0,0)",
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 60,
+        "padding_bottom": 72
+      }
+    },
+    "cb58dcc8-20f9-4b3d-a409-bfe9eb223071": {
+      "type": "collapsibles-by-turbo",
+      "blocks": {
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>01<strong> Uma lata de Bready cria quantos Bready's?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        },
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>02 <strong>Tem alguma contra-indicação?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        },
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>03 <strong>Quais são os sabores?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        },
+        "3f82b9e9-b430-4a70-b4e2-deab77087292": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>04 <strong>Quanto tempo leva para preparar?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        },
+        "bf5b9d42-9f76-411a-9cc1-ae8d89c9ee59": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>05 <strong>Posso misturar com outros ingredientes?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        },
+        "98410de8-a7fd-4b16-b1f8-e58209e988d4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "title": "<p>06 <strong>Como funciona o pagamento?<\/strong><\/p>",
+            "text": "<p>Texto aqui<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-1",
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-2",
+        "template--16820088832248__cb58dcc8-20f9-4b3d-a409-bfe9eb223071-collapsible_tab-3",
+        "3f82b9e9-b430-4a70-b4e2-deab77087292",
+        "bf5b9d42-9f76-411a-9cc1-ae8d89c9ee59",
+        "98410de8-a7fd-4b16-b1f8-e58209e988d4"
+      ],
+      "custom_css": [
+        ".subtitle {background: linear-gradient(241deg, #b03d1e 6%, #ed6f4e 64%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; font-size: 16px; font-weight: 500; width: fit-content; letter-spacing: 2px;}",
+        ".title p {color: #495057; font-size: 16px;}",
+        ".collapsible__heading p {font-size: 24px; line-height: 130%; font-weight: 600; display: flex; align-items: center; color: rgba(var(--color-button));}",
+        "strong {font-size: 18px; line-height: 150%; margin-left: 20px; color: #495057;}"
+      ],
+      "settings": {
+        "title": "<h2>Perguntas mais frequentes<\/h2><p>Separamos algumas perguntas e respostas que podem te ajudar na sua decisão<\/p>",
+        "subtitle": "<p>Tire suas dúvidas<\/p>",
+        "color_scheme": "",
+        "column": false,
+        "collapsible_column": false,
+        "text_alignment": "left",
+        "title_width": 400,
+        "gap": 8,
+        "height": 28,
+        "width": 700,
+        "border-radius": 8,
+        "vertical-padding": 24,
+        "horizontal-padding": 32,
+        "border-color": "#f1f3f5",
+        "border-opacity": 100,
+        "lateral-borders": true,
+        "border-top": true,
+        "border-bottom": true,
+        "icon": "shopify:\/\/shop_images\/icon-plus.svg",
+        "icon-angle": 135,
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "81d0447c-3b3a-428a-b411-25a26227c289",
+    "ca694306-d7a3-489f-87a5-8a719ab78a86",
+    "5b5d6df5-c382-4dc7-93e7-6e68d6be3b2f",
+    "6150ce5a-4e41-48a4-8c05-faee81aee112",
+    "23b5a030-b946-4880-89f6-b99224766ea0",
+    "414a38a3-6e64-48e2-ae0f-fa7c717b7987",
+    "7301a834-5841-4826-890b-c1a5d9358300",
+    "781a7388-9a18-49e8-8ad4-026444854efe",
+    "9cf334cf-8799-4e76-8fb4-3de0af537d30",
+    "cb58dcc8-20f9-4b3d-a409-bfe9eb223071"
   ]
 }

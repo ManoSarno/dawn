@@ -1,8 +1,6 @@
 slider-component {
-  --desktop-margin-left-first-item: max(
-    5rem,
-    calc((100vw - var(--page-width) + 10rem - var(--grid-desktop-horizontal-spacing)) / 2)
-  );
+  --desktop-margin-left-first-item: max(5rem,
+      calc((100vw - var(--page-width) + 10rem - var(--grid-desktop-horizontal-spacing)) / 2));
   position: relative;
   display: block;
 }
@@ -261,7 +259,7 @@ slider-component.slider-component-full-width {
 }
 
 .slider-counter {
-  display: flex;
+  display: none;
   justify-content: center;
   min-width: 4.4rem;
 }
@@ -333,37 +331,43 @@ slider-component.slider-component-full-width {
 .slider-buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  position: absolute;
+  top: calc(50% - 25px);
+  width: 100%;
 }
 
 @media screen and (min-width: 990px) {
-  .slider:not(.slider--everywhere):not(.slider--desktop) + .slider-buttons {
+  .slider:not(.slider--everywhere):not(.slider--desktop)+.slider-buttons {
     display: none;
   }
 }
 
 @media screen and (max-width: 989px) {
-  .slider--desktop:not(.slider--tablet) + .slider-buttons {
+  .slider--desktop:not(.slider--tablet)+.slider-buttons {
     display: none;
   }
 }
 
 @media screen and (min-width: 750px) {
-  .slider--mobile + .slider-buttons {
+  .slider--mobile+.slider-buttons {
     display: none;
   }
 }
 
 .slider-button {
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
   background: transparent;
   border: none;
   cursor: pointer;
-  width: 44px;
-  height: 44px;
+  width: 41px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
+  background: rgba(var(--color-background), 1);
+  z-index: 2;
 }
 
 .slider-button:not([disabled]):hover {
@@ -371,7 +375,7 @@ slider-component.slider-component-full-width {
 }
 
 .slider-button .icon {
-  height: 0.6rem;
+  height: 1.8rem;
 }
 
 .slider-button[disabled] .icon {

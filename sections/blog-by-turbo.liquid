@@ -1,0 +1,517 @@
+{% style %}
+  .blog_section {
+    overflow: hidden;
+  }
+
+  .blog, .title__blog {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .title__blog {
+    flex-shrink: 0;
+  }
+
+  .title > * {
+    word-break: normal;
+  }
+
+  .blog__container, .blog__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .blog__wrapper {
+    text-align: left;
+    max-width: var(--width);
+  }
+
+  .blog-card__wrapper {
+      display: flex;
+      width: 100%;
+      border-radius: 12px;
+  }
+
+  .blog__heading-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .section-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .article-card-wrapper {
+    z-index: 1;
+  }
+
+  .article__image-wrapper, .article-card__content {
+    width: 50%;
+    margin-right: 16px;
+  }
+
+  .article-card__information {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .article__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .custom-article {
+    display: flex;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid rgba(0, 0, 0, var(--border-opacity));
+  }
+
+  .article-card__content {
+    padding: 16px 0;
+  }
+
+  .article-card__text {
+    font-size: 16px;
+  }
+
+  .article-link {
+    text-decoration: underline;
+    color: rgba(var(--color-button), var(--alpha-button-background));
+    font-size: 16px;
+    font-weight: 600;
+    text-align: right;
+    margin-top: 16px;
+  }
+
+  .article_tags, .article_tag {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #8C3628;
+    font-size: 14px;
+  }
+
+  .article_tag {
+    gap: 6px;
+  }
+
+  .decor-image {
+    position: absolute;
+    z-index: 0;
+    top: var(--top);
+    left: var(--left);
+  }
+
+  @media screen and (max-width: 990px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    .section-row {
+      flex-direction: column !important;
+    }
+
+    .blog__wrapper {
+      max-width: 100%;
+    }
+
+    .decor-image {
+      top: var(--topMB);
+      left: var(--leftMB);
+    }
+
+    .article-card__text {
+      font-size: 14px;
+    }
+
+    .article__image-wrapper {
+      margin-right: 12px;
+    }
+
+    .article-link {
+      margin-top: 20px;
+    }
+  }
+{% endstyle %}
+
+<div class="blog_section section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="blog page-width{% unless section.settings.column %} section-row{% endunless %} text-{{ section.settings.text_alignment }} text-mobile-{{ section.settings.text_alignment }}">
+    <div class="title__blog">
+      {% if section.settings.subtitle != blank %}
+        <div class="subtitle">
+          {{ section.settings.subtitle }}
+        </div>
+      {% endif %}
+      <div
+        class="title"
+        style="{% unless section.settings.column %}max-width: {{ section.settings.title_width }}px;{% endunless %}"
+      >
+        {{ section.settings.title }}
+      </div>
+      {% if section.settings.button_label != blank and section.settings.column == false %}
+        <a class="button button--primary" href="{{ section.settings.button_link }}">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+    <div
+      class="blog__wrapper{% unless section.settings.blog_column %} section-row{% endunless %}"
+      style="--width: {{ section.settings.width }}px; gap: {{ section.settings.gap }}px;"
+    >
+      {%- for block in section.blocks -%}
+        {% if block.type == 'image' %}
+          {% if block.settings.image != blank %}
+            <img
+              class="decor-image{% if block.settings.image_mobile != blank %} desktop{% endif %}"
+              src="{{ block.settings.image | image_url }}"
+              style="--width: {{ block.settings.width }}px; --top: {{ block.settings.top }}%; --left: {{ block.settings.left }}%; -widthMB: {{ block.settings.width_mobile }}px; --topMB: {{ block.settings.top_mobile }}%; --leftMB: {{ block.settings.left_mobile }}%;"
+            >
+          {% endif %}
+          {% if block.settings.image_mobile != blank %}
+            <img
+              class="decor-image mobile"
+              src="{{ block.settings.image_mobile | image_url }}"
+              style="--widthMB: {{ block.settings.width_mobile }}px; --topMB: {{ block.settings.top_mobile }}%; --leftMB: {{ block.settings.left_mobile }}%;"
+            >
+          {% endif %}
+        {% else %}
+          <a
+            class="article-card-wrapper card-wrapper full-unstyled-link underline-links-hover"
+            {{ block.shopify_attributes }}
+            href="{{ block.settings.article.url }}"
+          >
+            {% comment %} <article aria-labelledby="Article-{{ article.id }}"> {% endcomment %}
+            <div
+              class="
+                card article-card custom-article
+                card--{{ settings.blog_card_style }}
+                {% if block.settings.article.image %} card--media{% else %} card--text{% endif %}
+                {% if settings.blog_card_style == 'card' %} color-{{ settings.blog_card_color_scheme }} gradient{% endif %}
+                {% if settings.blog_card_style == 'card' and block.settings.article.image == empty %} ratio{% endif %}
+              "
+            >
+              {%- if block.settings.article.image -%}
+                <div
+                  class="article__image-wrapper media media--hover-effect"
+                >
+                  <img
+                    srcset="
+                      {%- if block.settings.article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+                      {%- if block.settings.article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+                      {%- if block.settings.article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+                      {%- if block.settings.article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+                      {%- if block.settings.article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                      {%- if block.settings.article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                      {{ block.settings.article.image.src | image_url }} {{ article.image.src.width }}w
+                    "
+                    src="{{ block.settings.article.image.src | image_url: width: 533 }}"
+                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                    alt="{{ block.settings.article.image.src.alt | escape }}"
+                    class="motion-reduce article__image"
+                    loading="lazy"
+                  >
+                </div>
+              {%- endif -%}
+              <div class="article-card__content">
+                <div class="article-card__information">
+                  <div class="article_tags">
+                    {% if block.settings.article.metafields.custom.tempo_de_preparo != blank %}
+                      <div class="article_tag">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.00003 14.5C3.14021 14.5 0 11.3598 0 7.49985C0 3.64012 3.14021 0.5 7.00003 0.5C10.8598 0.5 14.0001 3.64012 14.0001 7.49985C14.0001 11.3597 10.8598 14.5 7.00003 14.5ZM7.00003 1.4736C3.67703 1.4736 0.973595 4.17697 0.973595 7.49985C0.973595 10.8229 3.67703 13.5264 7.00003 13.5264C10.323 13.5264 13.0265 10.8229 13.0265 7.49985C13.0265 4.17697 10.323 1.4736 7.00003 1.4736Z" fill="#8C3628"/>
+                          <path d="M9.34635 9.82891C9.26 9.82891 9.17259 9.80594 9.09346 9.75772L6.74663 8.32745C6.60163 8.23909 6.51318 8.08155 6.51318 7.91175V4.45579C6.51318 4.18696 6.73115 3.96899 6.99998 3.96899C7.26882 3.96899 7.48678 4.18696 7.48678 4.45579V7.63835L9.60012 8.92633C9.82971 9.06625 9.90239 9.36579 9.76247 9.59534C9.6708 9.74582 9.51052 9.82891 9.34635 9.82891Z" fill="#8C3628"/>
+                        </svg>
+
+                        <span>{{ block.settings.article.metafields.custom.tempo_de_preparo }} min</span>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.article.metafields.custom.quantidade_de_porcoes != blank %}
+                      <div class="article_tag">
+                        <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8.03365 6.99154C8.92946 6.33822 9.51281 5.28089 9.51281 4.08974C9.51281 2.11036 7.90245 0.5 5.92307 0.5C3.94368 0.5 2.33332 2.11036 2.33332 4.08974C2.33332 5.28089 2.91665 6.33822 3.81248 6.99154C1.58561 7.84371 0 10.0028 0 12.5256C0 13.6143 0.885691 14.5 1.97436 14.5H9.87178C10.9604 14.5 11.8461 13.6143 11.8461 12.5256C11.8461 10.0028 10.2605 7.84371 8.03365 6.99154ZM3.41026 4.08974C3.41026 2.70418 4.5375 1.57693 5.92307 1.57693C7.30863 1.57693 8.43587 2.70418 8.43587 4.08974C8.43587 5.4753 7.30863 6.60258 5.92307 6.60258C4.5375 6.60258 3.41026 5.4753 3.41026 4.08974ZM9.87178 13.4231H1.97436C1.47952 13.4231 1.07693 13.0205 1.07693 12.5256C1.07693 9.85342 3.25087 7.67946 5.92309 7.67946C8.59532 7.67946 10.7693 9.85339 10.7693 12.5256C10.7692 13.0205 10.3666 13.4231 9.87178 13.4231Z" fill="#8C3628"/>
+                        </svg>
+
+                        <span>
+                          {{- block.settings.article.metafields.custom.quantidade_de_porcoes }}
+                          {% if block.settings.article.metafields.custom.quantidade_de_porcoes > 1 -%}
+                            porções
+                          {%- else -%}
+                            porção
+                          {%- endif %}
+                        </span>
+                      </div>
+                    {% endif %}
+                  </div>
+                  <h4 class="card__heading">
+                    {{ block.settings.article.title | truncate: 50 | escape }}
+                  </h4>
+                  <p class="article-card__text">
+                    {{ block.settings.article.excerpt | strip_html }}
+                  </p>
+                </div>
+                <div class="article-link">{{ section.settings.article_link }}</div>
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.button_label != blank and section.settings.column %}
+      <a class="button button--primary" href="{{ section.settings.button_link }}">
+        {{ section.settings.button_label }}
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog Destaques Turbo",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Título da seção"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtítulo da seção"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "background-1",
+      "label": "Esquema de cores"
+    },
+    {
+      "type": "checkbox",
+      "id": "column",
+      "label": "Alinhamento entre título e blog em coluna",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_column",
+      "label": "Alinhamento dos artigos do blog em coluna",
+      "default": false
+    },
+    {
+      "type": "range",
+      "min": 0,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "id": "title_width",
+      "label": "Largura máxima do título",
+      "default": 400
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Esquerda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "right",
+          "label": "Direita"
+        }
+      ],
+      "default": "center",
+      "label": "Alinhamento do texto"
+    },
+    {
+      "type": "range",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "id": "gap",
+      "label": "Espaço entre os artigos do blog",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "min": 400,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "id": "width",
+      "label": "Largura máxima dos artigos do blog",
+      "default": 600
+    },
+    {
+      "type": "text",
+      "id": "article_link",
+      "default": "Ver receita",
+      "label": "Texto do botão dos artigos"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto do botão"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link do botão"
+    },
+    {
+      "type": "header",
+      "content": "PREENCHIMENTO DA SEÇÃO"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Preenchimento superior",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Preenchimento inferior",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article",
+      "name": "Artigo de blog",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Escolha o artigo"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Imagem de decoração",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Escolha a imagem"
+        },
+        {
+          "type": "range",
+          "id": "width",
+          "min": 0,
+          "max": 500,
+          "step": 10,
+          "unit": "px",
+          "default": 340,
+          "label": "Largura da imagem"
+        },
+        {
+          "type": "range",
+          "id": "top",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 100,
+          "label": "Distância da imagem ao topo da seção"
+        },
+        {
+          "type": "range",
+          "id": "left",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 0,
+          "label": "Distância da imagem à esquerda da seção"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Escolha a imagem para dispositivos móveis"
+        },
+        {
+          "type": "range",
+          "id": "width_mobile",
+          "min": 0,
+          "max": 390,
+          "step": 10,
+          "unit": "px",
+          "default": 110,
+          "label": "Largura da imagem para dispositivos móveis"
+        },
+        {
+          "type": "range",
+          "id": "top_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 0,
+          "label": "Distância da imagem ao topo da seção para dispositivos móveis"
+        },
+        {
+          "type": "range",
+          "id": "left_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 100,
+          "label": "Distância da imagem à esquerda da seção para dispositivos móveis"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Destaques Turbo",
+      "blocks": [
+        {
+          "type": "article"
+        },
+        {
+          "type": "article"
+        },
+        {
+          "type": "article"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

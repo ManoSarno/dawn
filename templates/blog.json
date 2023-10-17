@@ -1,19 +1,170 @@
 {
   "sections": {
+    "a9610a4c-d647-4747-b98c-ea88898371d0": {
+      "type": "slider-by-turbo",
+      "blocks": {
+        "9d50696b-043c-4732-a967-2770ea6bdda3": {
+          "type": "slider",
+          "settings": {
+            "color_scheme": "accent-1",
+            "image": "shopify:\/\/shop_images\/banner-receitas.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/banner-receitas_mobile.jpg",
+            "max_width": 600,
+            "desktop_content_position": "middle-center",
+            "text_alignment": "center",
+            "mobile_content_position": "middle-center",
+            "text_alignment_mobile": "center",
+            "slider_text": "<h2>Faça deliciosas <strong>receitas<\/strong> com o saudável pão Bready 🍞<\/h2><p>Receitas deliciosas pra deixar qualquer momento mais gostoso!<\/p>",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "9d50696b-043c-4732-a967-2770ea6bdda3"
+      ],
+      "custom_css": [
+        ".text-wrapper {margin: 0 auto 70px;}",
+        "strong {background: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0653\/9309\/9000\/files\/receitas-line.svg?v=1697485105\") no-repeat bottom\/contain;}",
+        "@media (max-width: 749px) {h2 {font-size: 24px; } p {font-size: 16px; } .text-wrapper {max-width: 292px !important; } .fixed_height {height: 534px; }}"
+      ],
+      "settings": {
+        "full_width": true,
+        "color_scheme": "",
+        "slides_per_view": 1,
+        "slides_per_view_mobile": "1",
+        "space_between": 0,
+        "adapt_height": false,
+        "slider_height": 400,
+        "autoplay": true,
+        "navigation": "",
+        "pagination": ""
+      }
+    },
     "main": {
       "type": "main-blog",
+      "blocks": {
+        "3d931f50-7ebe-464a-a56f-2801626571fd": {
+          "type": "filter",
+          "settings": {
+            "icon": "bread",
+            "custom_icon": "shopify:\/\/shop_images\/889a85a6d970085ad8ad4db7fab608bb.png",
+            "text": "Todas"
+          }
+        },
+        "b12b4259-4ccb-4d73-9eb4-9323a55610e7": {
+          "type": "filter",
+          "settings": {
+            "icon": "bread",
+            "custom_icon": "shopify:\/\/shop_images\/af951ee19906985b04c80f8e80259088.png",
+            "text": "Salgado"
+          }
+        },
+        "cbe0e5bd-ea4d-4215-bf0a-d958fbf7e938": {
+          "type": "filter",
+          "settings": {
+            "icon": "bread",
+            "custom_icon": "shopify:\/\/shop_images\/72e0a3fb1c02d4cc3b9ccf688d9639fd.png",
+            "text": "Doce"
+          }
+        }
+      },
+      "block_order": [
+        "3d931f50-7ebe-464a-a56f-2801626571fd",
+        "b12b4259-4ccb-4d73-9eb4-9323a55610e7",
+        "cbe0e5bd-ea4d-4215-bf0a-d958fbf7e938"
+      ],
+      "custom_css": [
+        ".main-blog {display: flex; flex-direction: column; align-items: center; gap: 12px;}",
+        ".tabs {margin-bottom: 32px;}"
+      ],
       "settings": {
-        "layout": "collage",
+        "title": "<h3>Filtre as receitas por:<\/h3>",
+        "layout": "grid",
         "show_image": true,
         "image_height": "medium",
-        "show_date": true,
+        "show_date": false,
         "show_author": false,
+        "article_link": "Ver receita",
+        "padding_top": 60,
+        "padding_bottom": 100
+      }
+    },
+    "e8eac172-e8c6-4b0c-8666-afdf6221dcf4": {
+      "type": "content-by-turbo",
+      "blocks": {
+        "template--16820088799480__e8eac172-e8c6-4b0c-8666-afdf6221dcf4-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/receitas-bg.jpg",
+            "full_height": true,
+            "absolute": true,
+            "width": 100,
+            "content_position": "middle-right",
+            "order_mobile": 2,
+            "width_mobile": 100,
+            "mobile_content_position": "middle-center"
+          }
+        },
+        "14377a4a-c1f7-4c17-81de-500a1054fa10": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/receitas-image.png",
+            "image_mobile": "shopify:\/\/shop_images\/receitas-image_mobile.jpg",
+            "full_height": false,
+            "absolute": true,
+            "width": 38,
+            "content_position": "bottom-right",
+            "order_mobile": 2,
+            "width_mobile": 100,
+            "mobile_content_position": "top-left"
+          }
+        },
+        "template--16820088799480__e8eac172-e8c6-4b0c-8666-afdf6221dcf4-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "<h2>Fez uma receita com Bready e quer que seja publicada? 🍞<\/h2>",
+            "text": "<p>Agora você pode ter uma receita sua compartilhada em nossas redes e site utilizando nosso querido Bready :)<\/p>",
+            "button_label": "Enviar minha receita",
+            "button_link": "",
+            "button_style_secondary": false,
+            "width": 54,
+            "content_position": "middle-left",
+            "text_alignment": "left",
+            "order_mobile": 1,
+            "width_mobile": 100,
+            "mobile_content_position": "middle-left",
+            "text_alignment_mobile": "left"
+          }
+        }
+      },
+      "block_order": [
+        "template--16820088799480__e8eac172-e8c6-4b0c-8666-afdf6221dcf4-image-1",
+        "14377a4a-c1f7-4c17-81de-500a1054fa10",
+        "template--16820088799480__e8eac172-e8c6-4b0c-8666-afdf6221dcf4-text-1"
+      ],
+      "custom_css": [
+        ".content-bottom-right {width: 430px; left: 95%;}",
+        ".content {padding: 0 5%;}",
+        ".content-middle-right img {object-position: right; border-radius: 12px;}",
+        "@media (max-width: 990px) {.content-bottom-right {width: 100%; height: 100% !important; top: 0; left: 0; transform: unset; grid-row: unset; grid-column: unset; } .content-bottom-right img {height: 100%; object-fit: cover; object-position: 90% 50%; border-radius: 12px; } .content-middle-right {display: none; } .content {padding: 28px 20px; } .content__texts {height: fit-content; }}"
+      ],
+      "settings": {
+        "full_width": false,
+        "section_style": "fixed",
+        "section_height": 400,
+        "section_height_mobile": 780,
+        "border_radius": 12,
+        "color_scheme": "inverse",
+        "reverse": false,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 100
       }
     }
   },
   "order": [
-    "main"
+    "a9610a4c-d647-4747-b98c-ea88898371d0",
+    "main",
+    "e8eac172-e8c6-4b0c-8666-afdf6221dcf4"
   ]
 }

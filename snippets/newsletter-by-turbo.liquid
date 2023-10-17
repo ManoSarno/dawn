@@ -1,0 +1,125 @@
+{% style %}
+  .newsletter {
+    margin-bottom: -80px;
+  }
+
+  @media screen and (max-width: 1350px) {
+    .newsletter {
+      margin-bottom: -115px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .newsletter {
+      margin-bottom: -131px;
+    }
+  }
+
+  .form_turbo {
+    border: 1px solid rgba(var(--color-button));
+    background-color: rgba(var(--color-background));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1.6rem;
+    padding: 4.2rem 6.2rem;
+    position: relative;
+    flex-wrap: nowrap;
+    column-gap: 1.6rem;
+  }
+
+  .form__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .form__heading > *,
+  .form__subheading > * {
+    margin: 0;
+    color: rgba(var(--color-link));
+  }
+
+  .form__header {
+    float: left;
+  }
+
+  .email {
+    display: flex;
+    gap: 1.2rem;
+    max-width: 100%;
+    width: 72rem;
+  }
+
+  .email input[type='email'] {
+    width: 100%;
+    border-radius: 1.6rem;
+    border: none;
+    padding: 1.8rem;
+    justify-self: stretch;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+
+  .email input[type='email']:focus {
+    background-color: #ffe7b8;
+  }
+
+  .email input[type='submit'] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    padding: 1.6rem 3.2rem;
+    border-radius: 1.6rem;
+    border: none;
+    background-color: rgba(var(--color-button));
+    color: rgba(var(--color-button-text));
+    font-size: 2rem;
+    line-height: 2.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    text: center;
+  }
+
+  @media only screen and (max-width: 990px) {
+    .form_turbo {
+      flex-direction: column;
+      row-gap: 2rem;
+      text-align: center;
+      padding: 2.3rem;
+    }
+
+    .form__header {
+      width: calc(100% - 4.4rem);
+    }
+
+    .email {
+      flex-direction: column;
+    }
+
+    .email input[type='email'],
+    .email input[type='submit'] {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+<div class="newsletter page-width">
+  {% form 'customer' %}
+    <div class="form_turbo color-{{ color_scheme }}">
+      <div class="form__header">
+        <div class="form__heading">
+          {{ heading }}
+        </div>
+        <div class="form__subheading">{{ subheading }}</div>
+      </div>
+
+      <div class="email">
+        <input type="email" name="contact[email]" placeholder="{{ placeholder }}">
+        <input type="submit" value="{{ button }}">
+      </div>
+    </div>
+  {% endform %}
+</div>

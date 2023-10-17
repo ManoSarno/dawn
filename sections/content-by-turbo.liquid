@@ -1,0 +1,947 @@
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .content {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--columns);
+    height: var(--height);
+    justify-content: space-between;
+    row-gap: 3.2rem;
+  }
+
+  .content__image-wrapper {
+    height: 100%;
+    width: var(--width);
+    border-radius: inherit;
+    overflow: visible;
+    position: sticky;
+    top: 100px;
+  }
+
+  .content__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .secao__cover {
+    object-fit: cover;
+  }
+
+  .secao__contain {
+    height: auto;
+  }
+
+  .content__text-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 0;
+    height: fit-content;
+    width: var(--width);
+  }
+
+  .content__texts {
+    position: relative;
+    height: 100%;
+    display: grid;
+    gap: 1.6rem;
+    padding: 0;
+    grid-column: var(--order);
+    grid-row: 1;
+  }
+
+  .content__button {
+    width: fit-content;
+    padding: 1.6rem 4.8rem;
+  }
+
+  .content-top-left, .text-top-left,
+  .content-top-center, .text-top-center,
+  .content-top-right, .text-top-right {
+    align-self: start;
+  }
+
+  .content-middle-left, .text-middle-left,
+  .content-middle-center, .text-middle-center,
+  .content-middle-right, .text-middle-right {
+    align-self: center;
+  }
+
+  .content-bottom-left, .text-bottom-left,
+  .content-bottom-center, .text-bottom-center,
+  .content-bottom-right, .text-bottom-right {
+    align-self: end;
+  }
+
+  .content-top-left, .text-top-left,
+  .content-middle-left, .text-middle-left,
+  .content-bottom-left, .text-bottom-left {
+    justify-self: start;
+  }
+
+  .content-top-center, .text-top-center,
+  .content-middle-center, .text-middle-center,
+  .content-bottom-center, .text-bottom-center {
+    justify-self: center;
+  }
+
+  .content-top-right, .text-top-right,
+  .content-middle-right, .text-middle-right,
+  .content-bottom-right, .text-bottom-right {
+    justify-self: end;
+  }
+
+  .position-absolute {
+    position: absolute;
+  }
+
+  .position-absolute.content-top-left {
+    top: 0;
+    left: 0;
+  }
+
+  .position-absolute.content-top-center {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .position-absolute.content-top-right {
+    top: 0;
+    left: 100%;
+    transform: translate(-100%, 0);
+  }
+
+  .position-absolute.content-middle-left {
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+  }
+
+  .position-absolute.content-middle-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .position-absolute.content-middle-right {
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%, -50%);
+  }
+
+  .position-absolute.content-bottom-left {
+    top: 100%;
+    left: 0;
+    transform: translate(0, -100%);
+  }
+
+  .position-absolute.content-bottom-center {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+
+  .position-absolute.content-bottom-right {
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+  }
+
+  @media screen and (max-width: {{ settings.page_width }}px) {
+    .content {
+      height: var(--heightTB);
+    }
+  }
+
+  @media screen and (max-width: 990px) {
+    .content {
+      height: var(--heightMB);
+      grid-template-columns: 100%;
+      grid-template-rows: var(--rows);
+    }
+
+    .content__image-wrapper {
+      width: var(--widthMB);
+      grid-column: 1;
+      grid-row: var(--order);
+      position: unset;
+    }
+
+    .content__texts {
+      grid-column: 1;
+      grid-row: var(--orderMB);
+    }
+
+    .content__text-wrapper {
+      width: var(--widthMB);
+      padding: 0;
+      grid-row: var(--order);
+    }
+
+    .content__text p:last-child strong {
+      display: flex;
+      font-size: 18px;
+      width: 118px;
+      font-weight: 600;
+      font-style: normal;
+      height: fit-content;
+    }
+
+    .text-mobile-top-left, .content-mobile-top-left,
+    .text-mobile-top-center, .content-mobile-top-center,
+    .text-mobile-top-right, .content-mobile-top-right {
+      align-self: start;
+    }
+
+    .text-mobile-middle-left, .content-mobile-middle-left
+    .text-mobile-middle-center, .content-mobile-middle-center,
+    .text-mobile-middle-right, .content-mobile-middle-right {
+      align-self: center;
+    }
+
+    .text-mobile-bottom-left, .content-mobile-bottom-left,
+    .text-mobile-bottom-center, .content-mobile-bottom-center,
+    .text-mobile-bottom-right, .content-mobile-bottom-right {
+      align-self: end;
+    }
+
+    .text-mobile-top-left, .content-mobile-top-left,
+    .text-mobile-middle-left, .content-mobile-middle-left,
+    .text-mobile-bottom-left, .content-mobile-bottom-left {
+      justify-self: start;
+    }
+
+    .text-mobile-top-center, .content-mobile-top-center,
+    .text-mobile-middle-center, .content-mobile-middle-center,
+    .text-mobile-bottom-center, .content-mobile-bottom-center {
+      justify-self: center;
+    }
+
+    .text-mobile-top-right, .content-mobile-top-right,
+    .text-mobile-middle-right, .content-mobile-middle-right,
+    .text-mobile-bottom-right, .content-mobile-bottom-right {
+      justify-self: end;
+    }
+
+    .position-absolute.content-mobile-top-left {
+      top: 0;
+      left: 0;
+    }
+
+    .position-absolute.content-mobile-top-center {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    .position-absolute.content-mobile-top-right {
+      top: 0;
+      left: 100%;
+      transform: translate(-100%, 0);
+    }
+
+    .position-absolute.content-mobile-middle-left {
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+    }
+
+    .position-absolute.content-mobile-middle-center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .position-absolute.content-mobile-middle-right {
+      top: 50%;
+      left: 100%;
+      transform: translate(-100%, -50%);
+    }
+
+    .position-absolute.content-mobile-bottom-left {
+      top: 100%;
+      left: 0;
+      transform: translate(0, -100%);
+    }
+
+    .position-absolute.content-mobile-bottom-center {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+
+    .position-absolute.content-mobile-bottom-right {
+      top: 100%;
+      left: 100%;
+      transform: translate(-100%, -100%);
+    }
+
+    .position-absolute {
+      position: absolute;
+    }
+
+    .content__button {
+      padding: 1.6rem 0;
+      width: 100%;
+    }
+
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+  }
+{% endstyle %}
+
+{% liquid
+  assign columns = ''
+  assign rows = ''
+  assign texts = 0
+  assign first_block = ''
+  assign grid_template_rows = ''
+  assign only_text = true
+  assign first_block_MB = ''
+  for block in section.blocks
+    unless block.settings.absolute
+      if block.type == 'image'
+        assign only_text = false
+      endif
+    endunless
+  endfor
+  for block in section.blocks
+    unless block.settings.absolute
+      if forloop.index0 == 0
+        assign first_block = block.type
+      endif
+      if block.settings.order_mobile == 1
+        assign first_block_MB = block.type
+      endif
+      if block.type == 'text'
+        assign texts = texts | plus: 1
+        assign grid_template_rows = grid_template_rows | append: 'max-content '
+        unless texts == 2
+          if columns == '' and only_text
+            assign columns = '100%'
+          else
+            assign columns = columns | append: block.settings.width | append: '% '
+          endif
+        endunless
+      endif
+      if block.type == 'image'
+        if columns == '' and forloop.last
+          assign columns = '100%'
+        else
+          assign columns = columns | append: block.settings.width | append: '% '
+        endif
+      endif
+    endunless
+    assign rows = rows | append: 'auto '
+  endfor
+  assign image_ratio = 0
+  assign image_ratio_MB = 0
+  assign images_count = 0
+  assign width = ''
+  assign widthMB = ''
+  if section.settings.section_style == 'auto'
+    assign height = 'auto'
+    assign heightTB = 'auto'
+    assign heightMB = 'auto'
+  else
+    assign height = section.settings.section_height | append: 'px'
+    assign heightTB = section.settings.section_height | append: 'px'
+    assign heightMB = section.settings.section_height_mobile | append: 'px'
+  endif
+  if section.settings.section_style == 'adapt_image'
+    for block in section.blocks
+      if block.type == 'image'
+        assign images_count = images_count | plus: 1
+        if images_count == 1
+          if block.settings.image != blank
+            assign image_ratio = block.settings.image.aspect_ratio
+            assign image_ratio_MB = block.settings.image.aspect_ratio
+          endif
+          if block.settings.image_mobile != blank
+            assign image_ratio_MB = block.settings.image_mobile.aspect_ratio
+          endif
+
+          assign width = block.settings.width
+          assign widthMB = block.settings.width_mobile
+
+          if section.settings.full_width
+            assign height = image_ratio | prepend: 'vw/' | prepend: width | prepend: 'calc(' | append: ')'
+            assign heightTB = image_ratio | prepend: 'vw/' | prepend: width | prepend: 'calc(' | append: ')'
+            assign heightMB = image_ratio_MB | prepend: 'vw/' | prepend: widthMB | prepend: 'calc(' | append: ')'
+          else
+            assign pageWidth = settings.page_width | prepend: 'calc(' | append: 'px * '
+            assign pageWidthTB = 'calc((100vw - 100px) * '
+            assign pageWidthMB = 'calc((100vw - 30px) * '
+
+            assign height = image_ratio | times: 100 | prepend: '/' | prepend: width | prepend: pageWidth | append: ')'
+            assign heightTB = image_ratio | times: 100 | prepend: '/' | prepend: width | prepend: pageWidthTB | append: ')'
+            assign heightMB = image_ratio_MB | times: 100 | prepend: '/' | prepend: widthMB | prepend: pageWidthMB | append: ')'
+          endif
+        endif
+      endif
+    endfor
+  endif
+%}
+
+<div>
+  <div class="secao__contents{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding isolate">
+    <div
+      class="content color-{{ section.settings.color_scheme }} gradient {{ section.settings.section_style }}"
+      style="--height: {{ height }}; --heightTB: {{ heightTB }}; --heightMB: {{ heightMB }}; border-radius: {{ section.settings.border_radius }}px; --columns: {{ columns }}; --rows: {{ rows }};"
+    >
+      <div
+        class="content__texts"
+        style="--order: {% if first_block == 'text' or only_text %}1{% else %}2{% endif %}; --orderMB: {% if first_block_MB == 'text' or only_text %}1{% else %}2{% endif %}; grid-template-rows: {% if texts == 1 %}auto{% else %}{{ grid_template_rows }}{% endif %};"
+      >
+        {% assign position_text = 0 %}
+        {% for block in section.blocks %}
+          {% if block.type == 'text' %}
+            {% assign position_text = position_text | plus: 1 %}
+            <div
+              class="content__text-wrapper text-{{ block.settings.content_position }} text-mobile-{{ block.settings.mobile_content_position }} text-{{ block.settings.text_alignment }} text-mobile-{{ block.settings.text_alignment_mobile }}{% if position_text == 2 %} desktop{% endif %}"
+              style="z-index: {{ forloop.index0 }}; --width: {% if columns == '100%' %}{{ block.settings.width }}%{% else %}100%{% endif %}; --widthMB: {{ block.settings.width_mobile }}%; --order: {{ block.settings.order_mobile }};"
+            >
+              {% if block.settings.title != blank %}
+                <div class="content__title">
+                  {{ block.settings.title }}
+                </div>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <div class="content__text">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+              {% if block.settings.button_label != blank %}
+                <a class="content__button button button--primary" href="{{ block.settings.button_link }}">
+                  <span>{{ block.settings.button_label }}</span>
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% assign position_text2 = 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'image' %}
+          <div
+            class="content__image-wrapper {% if block.settings.absolute %}position-absolute {% endif %}content-{{ block.settings.content_position }} content-mobile-{{ block.settings.mobile_content_position }}"
+            style="--width: {% if block.settings.absolute or columns == '100%' %}{{ block.settings.width }}{% else %}100{% endif %}%; --widthMB: {{ block.settings.width_mobile }}%; height: {% if block.settings.full_height %}100%{% else %}auto{% endif %}; z-index: {{ forloop.index0 }}; --order: {{ block.settings.order_mobile }};"
+          >
+            {% if block.settings.image != blank %}
+              <img
+                src="{{ block.settings.image | image_url }}"
+                loading="lazy"
+                class="content__image {% if block.settings.image_mobile != blank %}desktop {% endif %}{% if block.settings.full_height %}secao__cover{% else%}secao__contain{% endif %}"
+              >
+            {% endif %}
+            {% if block.settings.image_mobile != blank %}
+              <img
+                src="{{ block.settings.image_mobile | image_url }}"
+                loading="lazy"
+                class="content__image {% if block.settings.image != blank %}mobile {% endif %}{% if block.settings.full_height %}secao__cover{% else%}secao__contain{% endif %}"
+              >
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if block.type == 'text' %}
+          {% assign position_text2 = position_text2 | plus: 1 %}
+          {% if position_text2 == 2 %}
+            <div
+              class="content__text-wrapper text-{{ block.settings.content_position }} text-mobile-{{ block.settings.mobile_content_position }} text-{{ block.settings.text_alignment }} text-mobile-{{ block.settings.text_alignment_mobile }} mobile"
+              style="z-index: {{ forloop.index0 }}; --width: {{ block.settings.width }}%; --widthMB: {{ block.settings.width_mobile }}%; --order: {{ block.settings.order_mobile }};"
+            >
+              {% if block.settings.title != blank %}
+                <div class="content__title">
+                  {{ block.settings.title }}
+                </div>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <div class="content__text">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+              {% if block.settings.button_label != blank %}
+                <a class="content__button button button--primary" href="{{ block.settings.button_link }}">
+                  <span>{{ block.settings.button_label }}</span>
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Conteúdo by Turbo",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Definir seção com largura total",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "section_style",
+      "options": [
+        {
+          "value": "adapt_image",
+          "label": "Adaptar a primeira imagem"
+        },
+        {
+          "value": "auto",
+          "label": "Automática"
+        },
+        {
+          "value": "fixed",
+          "label": "Fixada"
+        }
+      ],
+      "default": "adapt_image",
+      "label": "Estilo da altura da seção"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "label": "Altura fixa da seção em desktop",
+      "min": 200,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "section_height_mobile",
+      "label": "Altura fixa da seção em dispositivo móvel",
+      "min": 200,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Raio do canto da seção",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "background-1",
+      "label": "Esquema de cores"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse",
+      "label": "Inverter ordem dos blocos em dispositivo móvel",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "PREENCHIMENTO DA SEÇÃO"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Preenchimento superior",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Preenchimento inferior",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Texto",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "default": "<h3>Título</h3>",
+          "label": "Escreva seu título"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Texto aqui</p>",
+          "label": "Escreva seu texto"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Texto do botão"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link do botão"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary",
+          "default": false,
+          "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_1.label"
+        },
+        {
+          "type": "range",
+          "id": "width",
+          "label": "Largura do texto em desktop",
+          "min": 20,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "Canto superior esquerdo"
+            },
+            {
+              "value": "top-center",
+              "label": "Centralizado na parte superior"
+            },
+            {
+              "value": "top-right",
+              "label": "Canto superior direito"
+            },
+            {
+              "value": "middle-left",
+              "label": "Centralizado à esquerda"
+            },
+            {
+              "value": "middle-center",
+              "label": "Centralizado"
+            },
+            {
+              "value": "middle-right",
+              "label": "Centralizado à direita"
+            },
+            {
+              "value": "bottom-left",
+              "label": "Canto inferior esquerdo"
+            },
+            {
+              "value": "bottom-center",
+              "label": "Centralizado na parte inferior"
+            },
+            {
+              "value": "bottom-right",
+              "label": "Canto inferior direito"
+            }
+          ],
+          "default": "middle-center",
+          "label": "Posição do conteúdo no desktop"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Esquerda"
+            },
+            {
+              "value": "center",
+              "label": "Centro"
+            },
+            {
+              "value": "right",
+              "label": "Direita"
+            }
+          ],
+          "default": "center",
+          "label": "Alinhamento do texto"
+        },
+        {
+          "type": "header",
+          "content": "LAYOUT PARA DISPOSITIVO MÓVEL"
+        },
+        {
+          "type": "range",
+          "id": "order_mobile",
+          "label": "Posição do texto entre os blocos em dispositivo móvel",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "width_mobile",
+          "label": "Largura do texto em dispositivo móvel",
+          "min": 60,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 100
+        },
+        {
+          "type": "select",
+          "id": "mobile_content_position",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "Canto superior esquerdo"
+            },
+            {
+              "value": "top-center",
+              "label": "Centralizado na parte superior"
+            },
+            {
+              "value": "top-right",
+              "label": "Canto superior direito"
+            },
+            {
+              "value": "middle-left",
+              "label": "Centralizado à esquerda"
+            },
+            {
+              "value": "middle-center",
+              "label": "Centralizado"
+            },
+            {
+              "value": "middle-right",
+              "label": "Centralizado à direita"
+            },
+            {
+              "value": "bottom-left",
+              "label": "Canto inferior esquerdo"
+            },
+            {
+              "value": "bottom-center",
+              "label": "Centralizado na parte inferior"
+            },
+            {
+              "value": "bottom-right",
+              "label": "Canto inferior direito"
+            }
+          ],
+          "default": "middle-center",
+          "label": "Posição do conteúdo no mobile"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment_mobile",
+          "options": [
+            {
+              "value": "left",
+              "label": "Esquerda"
+            },
+            {
+              "value": "center",
+              "label": "Centro"
+            },
+            {
+              "value": "right",
+              "label": "Direita"
+            }
+          ],
+          "default": "center",
+          "label": "Alinhamento do texto em dispositivo móvel"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Imagem",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Escolha a imagem"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Escolha a imagem para dispositivo móvel"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_height",
+          "label": "Preencher altura total da seção",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "absolute",
+          "label": "Imagem com posição absoluta",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "width",
+          "label": "Largura da imagem em desktop",
+          "min": 20,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "Canto superior esquerdo"
+            },
+            {
+              "value": "top-center",
+              "label": "Centralizado na parte superior"
+            },
+            {
+              "value": "top-right",
+              "label": "Canto superior direito"
+            },
+            {
+              "value": "middle-left",
+              "label": "Centralizado à esquerda"
+            },
+            {
+              "value": "middle-center",
+              "label": "Centralizado"
+            },
+            {
+              "value": "middle-right",
+              "label": "Centralizado à direita"
+            },
+            {
+              "value": "bottom-left",
+              "label": "Canto inferior esquerdo"
+            },
+            {
+              "value": "bottom-center",
+              "label": "Centralizado na parte inferior"
+            },
+            {
+              "value": "bottom-right",
+              "label": "Canto inferior direito"
+            }
+          ],
+          "default": "middle-center",
+          "label": "Posição do conteúdo em desktop"
+        },
+        {
+          "type": "header",
+          "content": "LAYOUT PARA DISPOSITIVO MÓVEL"
+        },
+        {
+          "type": "range",
+          "id": "order_mobile",
+          "label": "Posição da imagem entre os blocos em dispositivo móvel",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "default": 2
+        },
+        {
+          "type": "range",
+          "id": "width_mobile",
+          "label": "Largura da imagem em dispositivo móvel",
+          "min": 20,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "select",
+          "id": "mobile_content_position",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "Canto superior esquerdo"
+            },
+            {
+              "value": "top-center",
+              "label": "Centralizado na parte superior"
+            },
+            {
+              "value": "top-right",
+              "label": "Canto superior direito"
+            },
+            {
+              "value": "middle-left",
+              "label": "Centralizado à esquerda"
+            },
+            {
+              "value": "middle-center",
+              "label": "Centralizado"
+            },
+            {
+              "value": "middle-right",
+              "label": "Centralizado à direita"
+            },
+            {
+              "value": "bottom-left",
+              "label": "Canto inferior esquerdo"
+            },
+            {
+              "value": "bottom-center",
+              "label": "Centralizado na parte inferior"
+            },
+            {
+              "value": "bottom-right",
+              "label": "Canto inferior direito"
+            }
+          ],
+          "default": "middle-center",
+          "label": "Posição da imagem em dispositivo móvel"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Conteúdo by Turbo",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

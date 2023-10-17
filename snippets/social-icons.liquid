@@ -82,4 +82,20 @@
       </a>
     </li>
   {%- endif -%}
+  {%- if whatsapp != blank -%}
+    <li class="list-social__item">
+      <a href="{{ whatsapp }}" class="link list-social__link">
+        {%- render 'icon-whatsapp' -%}
+        <span class="visually-hidden">Whatsapp</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if email != blank -%}
+    <li class="list-social__item">
+      <a href="{{ email }}" class="link list-social__link">
+        {%- render 'icon-email' -%}
+        <span class="visually-hidden">E-mail</span>
+      </a>
+    </li>
+  {%- endif -%}
 </ul>

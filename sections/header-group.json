@@ -8,32 +8,79 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "text_alignment": "center",
-            "color_scheme": "background-1",
+            "text": "<p><em>Frete Grátis com o cupom <\/em><em><strong>MEUBREADY<\/strong><\/em><\/p>",
             "link": ""
           }
         }
       },
       "block_order": [
         "announcement-bar-0"
-      ]
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
     },
     "header": {
-      "type": "header",
+      "type": "header-by-turbo",
+      "blocks": {
+        "e7588af5-9b0a-4160-ab0d-dc43f86e8f8b": {
+          "type": "logo",
+          "settings": {
+          }
+        },
+        "79e18080-ec07-4f33-b844-00cde113db05": {
+          "type": "menu",
+          "settings": {
+            "menu": "main-menu",
+            "menu_type_desktop": "dropdown"
+          }
+        },
+        "80621f4f-cf6c-4a84-8201-a10e22f4c9e3": {
+          "type": "header-icons",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "e7588af5-9b0a-4160-ab0d-dc43f86e8f8b",
+        "79e18080-ec07-4f33-b844-00cde113db05",
+        "80621f4f-cf6c-4a84-8201-a10e22f4c9e3"
+      ],
+      "custom_css": [
+        ".header {grid-template-columns: max-content 1fr max-content;}",
+        ".button {order: 1;}"
+      ],
       "settings": {
         "color_scheme": "background-1",
-        "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "mobile_logo_position": "center",
+        "column": true,
+        "sticky_header_type": "always",
+        "show_line_separator": false,
+        "logo_position": "next-to-menu",
+        "padding_buttons": 24,
+        "radius_buttons": 8,
+        "search_button": false,
+        "search_color_scheme": "",
+        "search_text": "Buscar...",
+        "button_link": "shopify:\/\/products\/kit-2-unidades-original",
+        "button_text": "Comprar agora",
+        "button_secondary": false,
+        "login_color_scheme": "",
+        "login_text": "Entrar",
+        "logged_text": "Conta",
+        "empty_cart_icon": "shopify:\/\/shop_images\/empty-cart-icon.svg",
+        "cart_icon": "shopify:\/\/shop_images\/cart-icon.svg",
+        "menu_icon": "shopify:\/\/shop_images\/menu-icon.svg",
+        "menu_left": false,
+        "close_icon": "shopify:\/\/shop_images\/close-icon.svg",
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     }
   },

@@ -3,45 +3,73 @@
   "type": "footer",
   "sections": {
     "footer": {
-      "type": "footer",
+      "type": "footer-by-turbo",
       "blocks": {
-        "footer-0": {
-          "type": "link_list",
+        "7bb7243e-0f6c-4bfd-8d3e-a509626f5e27": {
+          "type": "brand_information",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "show_social": true,
+            "whatsapp": "https:\/\/api.whatsapp.com\/send\/?phone=5511935017871&text&type=phone_number&app_absent=0",
+            "email": "mailto:sac.bready@gmail.com"
           }
         },
-        "footer-1": {
-          "type": "link_list",
+        "0cf946a3-1442-4a0a-b2b7-ce7796d90498": {
+          "type": "newsletter",
           "settings": {
-            "heading": "Info",
-            "menu": "footer"
+            "heading": "<h4>10 dicas para perder 4kg em 30 dias<\/h4>",
+            "placeholder": "Insira seu e-mail aqui",
+            "button": "Receber agora",
+            "subtitle": "<p>Coloque seu email para enviarmos um checklist com 10 dicas para emagrecer<\/p>",
+            "button_side": false,
+            "width": 40
           }
         },
-        "footer-2": {
-          "type": "text",
+        "481e258e-4eff-4195-8c28-9d794eac979f": {
+          "type": "link_list",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "heading": "",
+            "menu": "menu-footer",
+            "width": 30
+          }
+        },
+        "e1e5b1a2-092e-4da9-9878-baaf1afad5cc": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footer",
+            "width": 30
           }
         }
       },
       "block_order": [
-        "footer-0",
-        "footer-1",
-        "footer-2"
+        "7bb7243e-0f6c-4bfd-8d3e-a509626f5e27",
+        "0cf946a3-1442-4a0a-b2b7-ce7796d90498",
+        "481e258e-4eff-4195-8c28-9d794eac979f",
+        "e1e5b1a2-092e-4da9-9878-baaf1afad5cc"
+      ],
+      "custom_css": [
+        ".contact-form {max-width: 320px; display: flex; flex-direction: column; gap: 16px;}",
+        ".contact-form span {color: rgba(255, 255, 255, 0.63); font-size: 14px;}",
+        ".newsletter__submit {width: 100%;}",
+        ".newsletter__email {text-transform: none; font-weight: 400; font-size: 16px; font-style: italic; padding: 17px 16px;}",
+        "@media (max-width: 749px) {.contact-form {max-width: unset; } h4 {font-size: 18px; } .newsletter__email {padding: 12px 16px; } .contact-form span, h4 {text-align: center; }}"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
-        "show_social": true,
-        "enable_country_selector": false,
-        "enable_language_selector": false,
-        "payment_enable": true,
-        "show_policy": false,
-        "margin_top": 48,
+        "color_scheme": "accent-1",
+        "copyright_text": "",
+        "copyright_column": true,
+        "copyright_invert": false,
+        "newsletter_enable": false,
+        "color_scheme_newsletter": "",
+        "newsletter_heading": "<h2>Subscribe to our emails<\/h2>",
+        "newsletter_subheading": "<p>Get all releases with unique perks<\/p>",
+        "newsletter_placeholder": "Enter your best email",
+        "newsletter_button": "Subscribe now!",
+        "horizontal_border": false,
+        "vertical_border": false,
+        "border_color": "",
+        "border_opacity": 0,
+        "margin_top": 0,
         "padding_top": 36,
         "padding_bottom": 36
       }

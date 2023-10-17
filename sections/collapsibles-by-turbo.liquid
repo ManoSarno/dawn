@@ -1,0 +1,502 @@
+{% style %}
+  .section__collapsibles, .title__collapsibles, .title {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem 3.2rem;
+  }
+  .title__collapsibles {
+    flex-shrink: 0;
+  }
+
+  .title > * {
+    word-break: normal;
+  }
+
+  .collapsibles__container, .collapsibles__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--width);
+  }
+
+  .collapsible__content, .collapsible__heading-wrapper {
+    padding: var(--padding);
+  }
+
+  .collapsible__wrapper {
+    text-align: left;
+  }
+
+  .collapsible__heading-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .collapsible__icon {
+    transition: .25s transform ease;
+    transform: rotate(0);
+  }
+
+  summary[aria-expanded="true"] > .collapsible__icon {
+    transform: rotate(var(--angle));
+  }
+
+  .collapsible__image {
+    position: relative;
+    width: var(--width);
+    top: var(--top);
+    left: var(--left);
+  }
+
+  .section-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 990px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    .section-row {
+      flex-direction: column !important;
+    }
+
+    ..collapsible__image {
+      width: var(--widthMB);
+      top: var(--topMB);
+      left: var(--leftMB);
+    }
+
+    .collapsibles__wrapper {
+      max-width: unset;
+    }
+
+    .collapsibles__container {
+      margin-top: 26px;
+    }
+
+    .collapsible__content, .collapsible__heading-wrapper {
+      padding: var(--paddingMB);
+    }
+  }
+{% endstyle %}
+
+{% liquid
+  assign border_opacity = section.settings['border-opacity'] | divided_by: 100.00
+  assign border_color = section.settings['border-color'] | color_modify: 'alpha', border_opacity
+  assign has_image = false
+  for block in section.blocks
+    if block.type == 'image'
+      assign has_image = true
+      if forloop.index0 == 0
+        assign reverse = true
+      endif
+    endif
+  endfor
+%}
+
+<div
+  class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+  style="position: relative;"
+>
+  <div class="section__collapsibles page-width {% if section.settings.column %}text-{{ section.settings.text_alignment }}{% else %}section-row{% endif %} text-mobile-{{ section.settings.text_alignment }}">
+    <div class="title__collapsibles">
+      {% if section.settings.subtitle != blank %}
+        <div class="subtitle">
+          {{ section.settings.subtitle }}
+        </div>
+      {% endif %}
+      <div
+        class="title"
+        style="{% unless section.settings.column %}max-width: {{ section.settings.title_width }}px;{% endunless %}"
+      >
+        {{ section.settings.title }}
+      </div>
+    </div>
+    <div
+      class="collapsibles__container {% unless section.settings.collapsible_column %}section-row{% endunless %}"
+      style="{% if reverse %}{% if section.settings.collapsible_column %}flex-direction: column-reverse;{% else %}flex-direction: row-reverse;{% endif %}{% endif %} {% if has_image == false and section.settings.column == false %}justify-content: end;{% endif %}"
+    >
+      <div
+        class="collapsibles__wrapper"
+        style="--width: {{ section.settings.width }}px; gap: {{ section.settings.gap }}px;"
+      >
+        {%- for block in section.blocks -%}
+          {% if block.type == 'collapsible_tab' %}
+            <div class="collapsible__wrapper" {{ block.shopify_attributes }}>
+              <details
+                id="Details-{{ block.id }}-{{ section.id }}"
+                style="padding: {{ section.settings.vertical-padding }}px 0; border-radius: {{ section.settings.border-radius }}px; border-width: {% if section.settings.border-top %}1px{% else %}0{% endif %} {% if section.settings.lateral-borders %}1px{% else %}0{% endif %} {% if section.settings.border-bottom %}1px{% else %}0{% endif %}; border-color: {{ border_color }}; border-style: solid;"
+              >
+                <summary
+                  class="collapsible__heading-wrapper"
+                  style="height: {{ section.settings.height }}px; --padding: 0 {{ section.settings.horizontal-padding }}px; --paddingMB: 0 {{ section.settings.horizontal-padding | divided_by: 2 }}px; --angle: {{ section.settings.icon-angle }}deg;"
+                >
+                  <div class="collapsible__heading">
+                    {{ block.settings.title }}
+                  </div>
+                  <img class="collapsible__icon" src="{{ section.settings.icon | image_url }}">
+                </summary>
+                <div
+                  class="collapsible__content"
+                  id="ProductAccordion-{{ block.id }}-{{ section.id }}"
+                  style="--padding: 3rem {{ section.settings.horizontal-padding }}px 0; --paddingMB: 3rem {{ section.settings.horizontal-padding | divided_by: 2 }}px 0;"
+                >
+                  {{ block.settings.text }}
+                </div>
+              </details>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {%- for block in section.blocks -%}
+        {% if block.type == 'image' %}
+          {% if block.settings.image != blank %}
+            <img
+              class="collapsible__image {% unless block.settings.image_mobile == blank %}desktop{% endunless %}"
+              src="{{ block.settings.image | image_url }}"
+              style="--width: {{ block.settings.width }}%; --widthMB: {{ block.settings.width_mobile }}%; {% if block.settings.absolute %}position: absolute; --top: {{ block.settings.top }}%; --left: {{ block.settings.left }}%; --topMB: {{ block.settings.top_mobile }}%; --leftMB: {{ block.settings.left_mobile }}%;{% endif %}"
+            >
+          {% endif %}
+          {% if block.settings.image_mobile != blank %}
+            <img
+              class="collapsible__image mobile"
+              src="{{ block.settings.image_mobile | image_url }}"
+              style="--widthMB: {{ block.settings.width_mobile }}%; {% if block.settings.absolute %}position: absolute; --topMB: {{ block.settings.top_mobile }}%; --leftMB: {{ block.settings.left_mobile }}%;{% endif %}"
+            >
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FAQ Turbo",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Título da seção"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtítulo da seção"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "background-1",
+      "label": "Esquema de cores"
+    },
+    {
+      "type": "checkbox",
+      "id": "column",
+      "label": "Alinhamento em coluna",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsible_column",
+      "label": "Alinhamento de imagem e linhas recolhíveis em coluna",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Esquerda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "right",
+          "label": "Direita"
+        }
+      ],
+      "default": "center",
+      "label": "Alinhamento do texto",
+      "info": "Apenas caso o alinhamento seja em coluna"
+    },
+    {
+      "type": "range",
+      "min": 0,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "id": "title_width",
+      "label": "Largura máxima do título",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "id": "gap",
+      "label": "Espaço entre as linhas recolhíveis",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "id": "height",
+      "label": "Altura das linhas recolhíveis",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "min": 400,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "id": "width",
+      "label": "Largura máxima das linhas recolhíveis",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "id": "border-radius",
+      "label": "Raio da borda das linhas recolhíveis",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "id": "vertical-padding",
+      "label": "Preenchimento vertical das linhas recolhíveis",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "id": "horizontal-padding",
+      "label": "Preenchimento horizontal das linhas recolhíveis",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "border-color",
+      "label": "Cor da borda das linhas recolhíveis",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "id": "border-opacity",
+      "label": "Opacidade da borda das linhas recolhíveis",
+      "default": 100
+    },
+    {
+      "type": "checkbox",
+      "id": "lateral-borders",
+      "label": "Ativar bordas laterais das linhas recolhíveis",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "border-top",
+      "label": "Ativar borda superior das linhas recolhíveis",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "border-bottom",
+      "label": "Ativar borda inferior das linhas recolhíveis",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Ícone de expansão das linhas recolhíveis"
+    },
+    {
+      "type": "range",
+      "id": "icon-angle",
+      "label": "Ângulo de rotação do ícone de expansão",
+      "default": 180,
+      "min": 0,
+      "max": 180,
+      "step": 5,
+      "unit": "deg"
+    },
+    {
+      "type": "header",
+      "content": "PREENCHIMENTO DA SEÇÃO"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Preenchimento superior",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Preenchimento inferior",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collapsible_tab",
+      "name": "Linha recolhível",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "default": "<h4>Título aqui</h4>",
+          "label": "Título"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Texto aqui</p>",
+          "label": "Texto"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Imagem",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagem para desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Imagem para dispositivo móvel"
+        },
+        {
+          "type": "checkbox",
+          "id": "absolute",
+          "label": "Imagem com posição absoluta",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "width",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 50,
+          "label": "Largura da imagem no desktop"
+        },
+        {
+          "type": "range",
+          "id": "top",
+          "label": "Posição em relação ao topo no desktop",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "left",
+          "label": "Posição em relação à esquerda no desktop",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "LAYOUT PARA DISPOSITIVO MÓVEL"
+        },
+        {
+          "type": "range",
+          "id": "width_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 50,
+          "label": "Largura da imagem em dispositivo móvel"
+        },
+        {
+          "type": "range",
+          "id": "top_mobile",
+          "label": "Posição em relação ao topo em dispositivo móvel",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "left_mobile",
+          "label": "Posição em relação à esquerda em dispositivo móvel",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Turbo",
+      "blocks": [
+        {
+          "type": "collapsible_tab"
+        },
+        {
+          "type": "collapsible_tab"
+        },
+        {
+          "type": "collapsible_tab"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
